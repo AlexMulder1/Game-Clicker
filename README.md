@@ -24,3 +24,5 @@ Upcoming Updates
 - Nerfing the spawn rates for both bugs & viruses.
 - Fixing the antivirus upgrade not wiping out viruses.
 - Adding a boss to cap off Generation 1.
+- Changing the unlock conditions for Potato PC related upgrades.
+- Changing the unlock conditions for all console related achievements.
