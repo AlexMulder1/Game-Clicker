@@ -1,0 +1,757 @@
+Let's make a game!
+	name:Game Clicker (Playtest)
+	author:Alexandrox
+	desc:Game Clicker is a Cookie Clicker inspired game made by <b>Alexandrox</b> where you control the entire game economy in a fun, bite-sized clicker full of innovative features. <//><i>I made this game because I'm in love with video-games and clickers, so I decided I wanted to make this. Have fun!</i> <//><#E4080A><i>Warning: This game is in the middle of a <b>PLAYTEST</b> and may be prone to glitches, a lack of features, and balancing problems.</i></#><//><b>Update History:</b><.><i>Version 1.0</i>: After updating the game back and forth getting everything together for like a month, I finally finished the game! Enjoy Game Clicker!
+	created:23/01/2025
+	updated:12/04/2025
+	version:0.9
+ 
+//This is supposed to be the early game. If this is supposed to be the early game, then WHERE IN THE WORLD ARE THE FUN AND QUICK GRINDS? basically, every single thing in the game either needs a production buff or a price nerf. It’s supposed to be go from one thing to the next. Remember: this is the early game. It should be quick, and the number should go up fast. I thought about it, and…isn’t this stuff coming in the future updates? We got gold, chips, fame! Right now, what we have is the full game. It shouldn’t be a quick grind. (although I am buffing the game bug)
+ 
+//the nerf list: should consider a nerf towards inflation for all towers...upgrades should be more extensive/cover a larger area of the game. glitch also deserves a nerf. Console upgrades could use a possible nerf. Ironically the tower based trophies also need a nerf. One of the outlining issues is when you start the game, you get all this crazy stuff. But then there’s this long stretch where there’s nothing stimulating. Then, near the end, it starts picking back up again.
+ 
+Settings
+	background:https://i.postimg.cc/YCVwf4qB/Screenshot-33.png
+	building cost increase:100%
+	building cost refund:75%
+	stylesheet:stuff/bigBlue.css
+ 
+//only thing left in development is finishing the sprites and starting the pre-release test after the sprites are finished. This will be done to see if the game's too grindy. (although the game bug could possibly use nerfing)
+ 
+Layout
+	*main
+  	contains:res, buttons
+  *res
+    	contains:Resources
+    	class:fullWidth
+  *buttons
+    	contains:Buttons
+		tooltip origin:bottom
+*store
+  	contains:buildings, upgrades
+  *buildings
+    	contains:BulkDisplay, Buildings
+    	header:Consoles
+    	tooltip origin:left
+	*logbox
+		contains:Log
+*upgrButtons
+	contains:tag:upgradeSwitcher
+//		header:Upgrade Switcher
+//		names:hide
+//		costs:hide
+  *upgrades
+   	    contains:Upgrades, upgrButtons
+    	header:Upgrades
+    	names:hide
+		costs:hide
+ 
+Buttons
+	*controllerButton
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 1 money
+			anim icon wobble
+			if (money=1 and tutorialStep=0)
+				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money to afford the arcade machine.
+				yield 1 tutorialStep
+			else if (money=10 and tutorialStep=1)
+				toast Great! Now, let's buy it.
+				yield 1 tutorialStep
+			else if (tutorialBuilding=1 and tutorialStep=2)
+				toast Did you notice how you're making money without even clicking the controller? That's what the <b><i>consoles</i></b> do. Go ahead and buy 9 more arcade machines.
+				yield 1 tutorialStep
+			else if (tutorialBuilding=10 and tutorialStep=3)
+				toast Great! Now that we have 10 of these, we can upgrade the arcade machines to perform even better than before! You can find it in <b>Console Upgrades</b>. <//><i>Get 100 <b>money</b>!</I>
+				yield 1 tutorialStep
+			else if (have tutorialUpgrade and tutorialStep=4)
+				toast Did you see how your <b>MPS</b> instantly went from 1 to 10? That's the power of upgrades! Now that that's all said & done, how about you rank up and start the actual game!...er...I..uh-...mean get the actual consoles!
+				yield 1 tutorialStep
+			else if (have generationUp1 and tutorialStep=5)
+				toast Now that you've ranked up to generation 1, good luck and enjoy the game! Uh...I meant be successful with the business!
+				yield 1 tutorialStep
+			end
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/3rFk9krz/pixil-frame-0-5.png
+		tag:controllerButton
+		no text
+ 
+	*controllerButton1
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 2 money
+			anim icon wobble
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/8CbC43NM/pixil-frame-0-7.png
+		tag:controllerButton
+		hidden
+		no text
+ 
+	*controllerButton2
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 4 money
+			anim icon wobble
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/zfHfMpNd/pixil-frame-0-15.png
+		tag:controllerButton
+		hidden
+		no text
+ 
+	*controllerButton3
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 8 money
+			anim icon wobble
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/kXcHWd0C/pixil-frame-0-17.png
+		tag:controllerButton
+		hidden
+		no text
+ 
+	*controllerButton4
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 16 money
+			anim icon wobble
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/mDSHrVnb/pixil-frame-0-19.png
+		tag:controllerButton
+		hidden
+		no text
+ 
+	*controllerButton5
+		name:Do some gaming!
+		desc:Click this to play video-games and earn money!
+		on click:
+			yield 32 money
+			anim icon wobble
+		end
+		class:bigButton hasFlares
+		icon class:shadowed
+		icon:https://i.postimg.cc/7L3Vg3RR/pixil-frame-0-21.png
+		tag:controllerButton
+		hidden
+		no text
+ 
+	*controllerUpgrades
+		name:Controller Upgrades
+		desc:Level up your controller once or twice!…or even more times!
+		tag:upgradeSwitcher
+		on click:
+			show tag:controllerUpgrade
+			hide :Upgrades:notTag:controllerUpgrade
+			anim glow
+		end
+		tooltip origin:bottom
+ 
+	*consoleUpgrades
+		name:Console Upgrades
+		desc:Enhance your consoles past their simple structure.
+		tag:upgradeSwitcher
+		on click:
+			show tag:consoleUpgrade
+			hide :Upgrades:notTag:consoleUpgrade
+			anim glow
+		end
+		tooltip origin:bottom
+ 
+	*workplaceUpgrades
+		name:Workplace Upgrades
+		desc:Make that place of yours more…livable.
+		tag:upgradeSwitcher
+		on click:
+			show tag:workplaceUpgrade
+			hide :Upgrades:notTag:workplaceUpgrade
+			anim glow
+		end
+		tooltip origin:bottom
+ 
+	*generationUpgrades
+		name:Generation Upgrades
+		desc:Unlock the PC & GameDude!
+		tag:upgradeSwitcher
+		on click:
+			show tag:generationUpgrade
+			hide :Upgrades:notTag:generationUpgrade
+			anim glow
+		end
+		tooltip origin:bottom
+ 
+ 
+Resources
+	*money
+		name:Money
+		desc:This is your money, which you can use to purchase consoles for your business and upgrades for it. Your goal is to make as much money as possible.
+		icon class:shadowed
+		icon:https://i.postimg.cc/6QPjmS88/pixil-frame-0-4.png
+ 
+	*glitchClick
+		name:Bugs Fixed
+		desc:This is the amount of bugs you've fixed in your game! Your goal is to fix as many bugs as possible.
+		icon class:shadowed
+		icon:https://i.postimg.cc/Nfhv8VCD/bugs-Fixed.png
+		hidden when 0
+ 
+	*antivirusFragment
+		name:Antivirus Fragment
+		desc:This is the amount of fragments you've received for an antivirus. You can collect more by clicking on viruses.
+		icon class:shadowed
+		hidden when 0
+ 
+	*macClick
+		name:MAC
+		desc:MAC IS KING
+		icon class:shadowed
+		always hidden
+ 
+	*tutorialStep
+		name:Tutorial Step
+		desc:a hidden resource made for the purpose of advancing the tutorial.
+		icon class:shadowed
+		always hidden
+ 
+Buildings
+ 
+	*mps
+		name:Super Secret Money Producer
+		desc:if you see this, i know you’re using hacks…
+		cost:99999 money
+		on tick:yield 0.0000000000000000001 money
+		cost increase:100%
+		always hidden
+		is always:1
+ 
+	*tutorialBuilding
+		name:Arcade Machine
+		desc:A random arcade machine you got at a garage sale.<//><b>Effect:</b><.>Produces 0.1 money every second.
+		cost:10 money
+		on tick:yield 0.1 money
+		limit:10
+		unlocked
+ 
+	*console1
+		name:Alexandrox Gaming System | AGS
+		desc:The first console in the long line of consoles to come.<//><b>Effect:</b><.>Produces 1 money every second.
+		cost:100 money
+		on tick:yield 1 money
+		cost increase:104%
+		icon:https://i.postimg.cc/28ww2L86/console1.png
+		req:generationUp1
+ 
+	*portableConsole1
+		name:Game Dude | GD
+		desc:Dude, you better game! <//><b>Effect:</b><.>Produces 1 money every five seconds.
+		cost:50 money
+		on tick:yield 0.20 money
+		cost increase:102%
+		icon:https://i.postimg.cc/MpKQjp9S/pixil-frame-0-1.png
+		req:consoleUnlock
+ 
+	*pc1
+		name:Potato PC | PPC
+		desc:I mean…it works? <//><b>Effect:</b><.>Produces 2.5 money every second.
+		cost:200 money
+		on tick:yield 2.5 money
+		cost increase:106%
+		icon:https://i.postimg.cc/zGFY4JNV/pixil-frame-0-3.png
+		req:pcUnlock
+ 
+Upgrades
+ 
+	*fameTest2
+		name:Fame Test
+		desc:testing a feature for the fame update. Basically, as you get more fame, you can pay to get access to upgrades that increase the money earned from controllers, not multiplied, so it doesnt stack with controller upgrades. It’s less of a progression update and more of a “new feature” kinda update. (it also gives cps boosts...so yeah)
+		cost:1 money
+		passive:increase yield of tag:controllerButton by 1
+		always hidden
+ 
+//Tutorial Upgrades
+	*tutorialUpgrade
+		name:Enhanced Arcade Machine
+		desc:Give your arcade machines joysticks!<//><b>Effect:</b><.>The <i>arcade machine</i> now makes 10x as much money!
+		cost:100 money
+		passive:multiply money yield of tutorialBuilding by 10
+		tag:consoleUpgrade
+		req:10 tutorialBuilding
+ 
+	*generationUp1
+		name:Generation 1
+		desc:Buy a new game store & some consoles in the process.<//><b>Effect:</b><.><i>Generation 1</i> of consoles is fully unlocked!
+		cost:250 money
+		passive:show gameVirus
+		tag:generationUpgrade
+		req:tutorialUpgrade
+ 
+ 
+//Controller Upgrades
+	*controller1
+		name:Controller Level 1
+		desc:Round the design of your controller to make it smoother!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 2.
+		cost:100 money
+		passive:hide controllerButton
+		passive:show controllerButton1
+		icon:https://i.postimg.cc/SxHyrhBn/pixil-frame-0-14.png
+		tag:controllerUpgrade
+		req:generationUp1
+ 
+	*controller2
+		name:Controller Level 2
+		desc:Give the controller not 1, not 2, not 3, but 4 controller buttons!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 4.
+		cost:1000 money
+		passive:hide controllerButton1
+		passive:show controllerButton2
+		icon:https://i.postimg.cc/t4Hv7Gv0/controller-Upgrade2.png
+		tag:controllerUpgrade
+		req:controller1
+ 
+	*controller3
+		name:Controller Level 3
+		desc:Give your controller handles!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 8.
+		cost:5000 money
+		passive:hide controllerButton2
+		passive:show controllerButton3
+		icon:https://i.postimg.cc/1tVtNB4x/pixil-frame-0-18.png
+		tag:controllerUpgrade
+		req:controller2
+ 
+	*controller4
+		name:Controller Level 4
+		desc:Make your controller 3D!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 16.
+		cost:25000 money
+		passive:hide controllerButton3
+		passive:show controllerButton4
+		icon:https://i.postimg.cc/4NyBrhKK/pixil-frame-0-20.png
+		tag:controllerUpgrade
+		req:controller3
+ 
+	*controller5
+		name:Controller Level 5
+		desc:Make the buttons colorful!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 32.
+		cost:100000 money
+		passive:hide controllerButton4
+		passive:show controllerButton5
+		icon:https://i.postimg.cc/vH4tPFjf/pixil-frame-0-22.png
+		tag:controllerUpgrade
+		req:controller4
+ 
+//Unlocks for portables and PC (Generation Upgrades)
+	*consoleUnlock
+		name:Invent Portable Consoles
+		desc:Bring yer consoles anywhere!<//><b>Effect:</b><.>Unlocks <i>Portable Consoles</i>
+		cost:250 money
+		icon:https://i.postimg.cc/q7QCy2kc/portable-Console-Unlock.png
+		tag:generationUpgrade
+		req:10 console1
+ 
+	*pcUnlock
+		name:Invent PCs
+		desc:Get big, beefy PCs!<//><b>Effect:</b><.>Unlocks <i>PCs</i>
+		cost:1000 money
+		icon:https://i.postimg.cc/KYmM10yv/pcUnlock.png
+		tag:generationUpgrade
+		req:10 console1
+ 
+	*antivirusUpgrade
+		name:Antivirus
+		desc:Finally get an antivirus to get rid of those pesky viruses.<//><b>Effect:</b><.><i>Viruses</i> will disappear forever.<.>2x multiplier to everything!
+		cost:100 antivirusFragment
+		passive:
+			multiply yield of money by 2
+			hide gameVirus
+		end
+		tag:generationUpgrade
+		req:1 antivirusFragment
+ 
+//Console Upgrades
+	*color
+		name:Color Enhancement
+		desc:Add color to the amazing Game Dude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes 1 money every 2 seconds!
+		cost:25000 money
+		passive:multiply money yield of portableConsole1 by 2.5
+		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
+		tag:consoleUpgrade
+		req:100 portableConsole1
+ 
+	*paintIt
+		name:Paint the Console!
+		desc:Paint the AGS with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes 2x as much money!
+		cost:50000 money
+		passive:multiply money yield of console1 by 2
+		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
+		tag:consoleUpgrade
+		req:100 console1
+ 
+	*newGPU
+		name:New GPU
+		desc:Get a new, more colorful Graphics Processing Unit for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes 2x as much money!
+		cost:100000 money
+		passive:multiply money yield of pc1 by 2
+		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
+		tag:consoleUpgrade
+		req:100 pc1
+ 
+//Workplace Upgrades
+	*newChair
+		name:New Chair
+		desc:Buy a new chair for your aching back. It’s not much, but it works.<//><b>Effect:</b><.>Make 10 more money per second.
+		cost:1000 money
+		passive:increase money yield of mps by 10
+		icon:https://i.postimg.cc/brxNN0rf/workplace-Upgrade1.png
+		tag:workplaceUpgrade
+		req:10 console1
+ 
+	*aDesk
+		name:A Desk
+		desc:Buy a new desk to put your things on!<//><b>Effect:</b><.>Make 30 more money per second.
+		cost:10000 money
+		passive:increase money yield of mps by 30
+		icon:https://i.postimg.cc/SRFxh1yG/workplace-Upgrade2.png
+		tag:workplaceUpgrade
+		req:newChair
+ 
+	*rgbLighting
+		name:RGB Lighting
+		desc:Wow, you’re really going for the gamer vibe, huh?<//><b>Effect:</b><.>Make 50 more money per second.
+		cost:25000 money
+		passive:increase money yield of mps by 50
+		icon:https://i.postimg.cc/3JZJsZzg/workplace-Upgrade3.png
+		tag:workplaceUpgrade
+		req:aDesk
+ 
+	*newBed
+		name:New Bed
+		desc:Get a new bed. Every gamer needs their rest, right?<//><b>Effect:</b><.>Make 50 more money per second.
+		cost:50000 money
+		passive:increase money yield of mps by 50
+		icon:https://i.postimg.cc/2jh5wYw9/workplace-Upgrade4.png
+		tag:workplaceUpgrade
+		req:rgbLighting
+ 
+	*newHouse
+		name:New House
+		desc:Get a new house to work in instead of your parents’ garage.<//><b>Effect:</b><.>Make 100 more money per second.
+		cost:100000 money
+		passive:increase money yield of mps by 100
+		icon:https://i.postimg.cc/0y22Pwqh/workplace-Upgrade5.png
+		tag:workplaceUpgrade
+		req:newBed
+ 
+//Super Secret Upgrade!!!
+	*secretUpgrade
+		name:Mac's Gift
+		desc:A gift Mac gave you for being such a good friend & clicking him 10 times.<//><b>Effect:</b><.>Increases the money earned by clicking your controller by a super secret amount.
+		cost:0 money
+		passive:multiply yield of tag:controllerButton by macClick
+		icon:https://i.postimg.cc/hjpN8pj0/mac-Upgrade.png
+		tag:generationUpgrade
+		req:macClick>=10
+ 
+ 
+Achievements
+	*tutorialTrophy
+		name:Great Beginnings
+		desc:Start your game shop!
+		req:generationUp1
+ 
+	*moneyTrophy1
+		name:A Morsel of Wealth
+		desc:Get 1 money. Uh...you're kinda broke.
+		icon:https://i.postimg.cc/YCD7SHrX/pixil-frame-0-9.png
+		req:1 money
+ 
+	*moneyTrophy2
+		name:Gaining Wealth
+		desc:Get 1K money! Wow, you're stacked!
+		icon:https://i.postimg.cc/9025kXbf/pixil-frame-0-10.png
+		req:1000 money
+ 
+	*moneyTrophy3
+		name:One Successful Business
+		desc:Get 10K money! Can I have a share?
+		icon:https://i.postimg.cc/t4wcfCCH/pixil-frame-0-11.png
+		req:10000 money
+ 
+	*moneyTrophy4
+		name:Video-Game Professional
+		desc:Get 100K money! Join an E-Sports team or something!
+		icon:https://i.postimg.cc/sD1wrdLf/pixil-frame-0-12.png
+		req:100000 money
+	*moneyTrophy5
+		name:Developer Millionaire
+		desc:Get 1M money! You know what? I'm gonna go start a cookie business!
+		icon:https://i.postimg.cc/NFF7BmpC/pixil-frame-0-13.png
+		req:1000000 money
+ 
+	*gameBugTrophy1
+		name:Imperfection
+		desc:Fix your first bug! You didn't know games could have bugs?
+		icon:https://i.postimg.cc/SKwy0MvW/bug-Trophy1.png
+		req:1 glitchClick
+ 
+	*gameBugTrophy2
+		name:Bug Hunting
+		desc:Fix 10 bugs! Wow, this game doesn't look like it's in complete shambles anymore!
+		icon:https://i.postimg.cc/bY0qMdHt/bug-Trophy2.png
+		req:10 glitchClick
+ 
+	*gameBugTrophy3
+		name:Bug Hunting Professional
+		desc:Fix 100 bugs! This is actually pretty polished. I think you should stop here.
+		icon:https://i.postimg.cc/T1cGWHY9/bug-Trophy3.png
+		req:100 glitchClick
+ 
+	*gameBugTrophy4
+		name:Perfection
+		desc:Fix 1K bugs! YOU'VE WIPED OUT ALL THE BUGS IN EXISTENCE!!!
+		icon:https://i.postimg.cc/XJdnnYRt/bug-Trophy4.png
+		req:1000 glitchClick
+ 
+	*agsTrophy1
+		name:8-Bit Glamor
+		desc:Buy your first AGS!
+		icon:https://i.postimg.cc/SQcKhgqj/AGSTrophy1.png
+		req:1 console1
+ 
+	*agsTrophy2
+		name:Rise of the Pixels
+		desc:Buy 10 AGS....es
+		icon:https://i.postimg.cc/4x2f5Mv2/AGSTrophy2.png
+		req:10 console1
+ 
+	*agsTrophy3
+		name:Nintendon’t Mess With Me
+		desc:Buy 100 AGSes!...wait, what do you mean NES?
+		icon:https://i.postimg.cc/hjdthrdy/AGSTrophy3.png
+		req:100 console1
+ 
+	*agsTrophy4
+		name:8-Bit Legends
+		desc:Buy 1K AGSes! Jeez, you're legendary!
+		icon:https://i.postimg.cc/wTHjTDT2/AGSTrophy4.png
+		req:1000 console1
+ 
+	*gdTrophy1
+		name:Portable Revolution
+		desc:Buy your first GameDude!
+		icon:https://i.postimg.cc/mk7kpwZz/GDTrophy1.png
+		req:1 portableConsole1
+ 
+	*gdTrophy2
+		name:Colorless Green
+		desc:Buy 10 GameDudes! (unfortunately they don't play in color)
+		icon:https://i.postimg.cc/RZShGKkh/GDTrophy2.png
+		req:10 portableConsole1
+ 
+	*gdTrophy3
+		name:Gotta Catch 'em All!
+		desc:Catch 100 GameDudes! I just need to finish my GameDude collection...
+		icon:https://i.postimg.cc/RVQqcXb2/GDTrophy3.png
+		req:100 portableConsole1
+ 
+	*gdTrophy4
+		name:Master of Portability
+		desc:Buy 1K GameDudes! Jeez, you've mastered the Game, Dude!
+		icon:https://i.postimg.cc/t4BTc7b5/GDTrophy4.png
+		req:1000 portableConsole1
+ 
+	*potatoPCTrophy1
+		name:The Power of Vegetables
+		desc:Buy your first Potato PC! Wait, it's not a potato?
+		icon:https://i.postimg.cc/QMPMXPHK/PPCTrophy1.png
+		req:1 pc1
+ 
+	*potatoPCTrophy2
+		name:Potato Power
+		desc:Buy 10 Potato PCs! But it's potato powered, right?
+		icon:https://i.postimg.cc/C5pL8qCF/PPCTrophy2.png
+		req:10 pc1
+ 
+	*potatoPCTrophy3
+		name:Poisonous Potato Mayhem
+		desc:Buy 100 Potato PCs! THEY CAN CONTRACT VIRUSES?!
+		icon:https://i.postimg.cc/wTVTt31p/PPCTrophy3.png
+		req:100 pc1
+ 
+	*potatoPCTrophy4
+		name:A Powerful Potato
+		desc:Buy 1K Potato PCs! Oh wow, they're more powerful than consoles!
+		icon:https://i.postimg.cc/hv841tMV/PPCTrophy4.png
+		req:1000 pc1
+ 
+	*allRounder
+		name:All Rounder
+		desc:Invent all three console types! You're one creative person, I must say!
+		icon:https://i.postimg.cc/FKf9nZDr/all-Rounder-Trophy.png
+		req:consoleUnlock
+		req:pcUnlock
+ 
+	*gen1CUTrophy
+		name:Color Splash
+		desc:Upgrade all consoles in Generation 1! Wow, all this color really makes the games immersive!
+		icon:https://i.postimg.cc/T1xf1XG1/console-Upgrade-Trophy1.png
+		req:color
+		req:paintIt
+		req:newGPU
+ 
+	*workplaceTrophy1
+		name:Living Life
+		desc:Move into your new house, and just live life at its finest!
+		icon:https://i.postimg.cc/3xxr27GD/workplace-Upgrade-Trophy1.png
+		req:newHouse
+ 
+	*controllerTrophy1
+		name:Advanced Controller
+		desc:Upgrade your controller to max level!
+		icon:https://i.postimg.cc/XvS542pv/controller-Trophy1.png
+		req:controller5
+ 
+	*secretMacTrophy1
+		name:A Mysterious Figure
+		desc:Discover Mac bouncing around in the game.
+		icon:https://i.postimg.cc/WbPhFQSM/mac-Trophy1.png
+		req:1 macClick
+ 
+	*secretMacTrophy2
+		name:The Game Begins
+		desc:Start a friendly game with Mac to see how many times he can be clicked.
+		icon:https://i.postimg.cc/VstJNY9f/mac-Trophy2.png
+		req:5 macClick
+ 
+	*secretMacTrophy3
+		name:An Amazing Friendship
+		desc:Reach the amazing milestone of clicking Mac 10 times! You can feel yourself and Mac growing closer.<//><i>Check the <b>Generation Upgrades</b> tab for Mac's gift.</i>
+		icon:https://i.postimg.cc/k5D4P9Xd/mac-Trophy3.png
+		req:10 macClick
+ 
+Shinies
+ 
+	*gameBug
+		movement:anywhere fade growShrink spinRandom
+		frequency:60
+		frequency variation:30
+		icon:https://i.postimg.cc/vTQRf7v8/pixil-frame-0-2.png
+		class:bigButton
+		on click:
+			$amount=max(random(money:ps*1,money:ps*60))
+			toast Fixing the Game Bug granted you<//><b>[$amount] money</b>!
+			yield $amount money
+			yield 1 glitchClick
+			if (glitchClick=1)
+				toast What you just clicked was a <b><i>game bug.</b></i> Whenever they appear onscreen, you should <b>always</b> click them for all kinds of special rewards.
+			end
+		end
+ 
+	*gameVirus
+		movement:anywhere fade growShrink spinRandom
+		frequency:45
+		icon:https://i.postimg.cc/d0T7Kc3H/game-Virus.png
+		class:bigButton
+		on click:
+			yield 1 antivirusFragment
+			if (antivirusFragment=1)
+				toast Muahahaha...did you really think your computer was safe from me? Well, it isn't. I can infiltrate any system with the click of a button...see you.
+			else if (antivirusFragment=2)
+				toast Oh, how we meet again! It's so fun seeing everything slow down while I steal all your info in the process.
+			else if (antivirusFragment=3)
+				toast You're just gonna keep trying to exterminate my virus like that? Heh. It doesn't work like that, buddy. You can keep trying, though. I won't stop you.
+			else if (antivirusFragment=4)
+				toast HA! This is just priceless. Do you actually think you're doing anything?
+			else if (antivirusFragment=5)
+				toast Wait...what? You're building an antivirus to stop MY virus? Heh. That's funny...wait...oh, that's not good.
+			else if (antivirusFragment=10)
+				toast I'm not going to let you stop me! Stop building that antivirus before I do something to you!
+			else if (antivirusFragment=15)
+				toast Grr...you're going to keep going, aren't you?
+			else if (antivirusFragment=20)
+				toast You're definitely the most...interesting person I've hacked.
+			else if (antivirusFragment=25)
+				toast Honestly, I have no idea what I'm doing.
+			else if (antivirusFragment=30)
+				toast Also, you're actually the first person I've ever hacked...
+			else if (antivirusFragment=40)
+				toast Ugh! I should be stealing all your info, not becoming friends with you!
+			else if (antivirusFragment=50)
+				toast Great. You're halfway done with that...brr...antivirus of yours. I'm not happy about this, you know that?!
+			else if (antivirusFragment=60)
+				toast ...sigh...I've lost all hope in stealing everything from you.
+			else if (antivirusFragment=70)
+				toast You know what? Maybe being friends with you isn't that bad.
+			else if (antivirusFragment=80)
+				toast How much money do you have? Oh wow, that's a lot!
+			else if (antivirusFragment=90)
+				toast ...I've thought about this for a bit, and what if we share our passwords with each other? No?...
+			else if (antivirusFragment>90)
+				toast ...
+			else if (antivirusFragment=99)
+				toast DON'T FINISH THE ANTIVIRUS. I...NEED...IT...i can't let you finish this. 
+			else if (antivirusFragment=100)
+				toast You know what? I'M DONE WITH YO-...<b>Connection Terminated.</b>
+			else
+				$fragment=antivirusFragment
+				toast <b>[$fragment]</b> antivirus fragments have been collected. Keep going, and finish the antivirus.
+			end
+		end
+		hidden
+ 
+	*mac
+		movement:onBottom onLeft moveRight bounce
+		frequency:1800
+		icon:https://i.postimg.cc/0jrr2Q0g/Mac.png
+		class:bigButton
+		on click:
+			yield 1 macClick
+			if (macClick=1)
+				toast Hi there! I'm Mac! Who are you?
+			else if (macClick=2)
+				toast Oh, it's you again! How ya doing?
+			else if (macClick=3)
+				toast Okay, okay. This is actually getting kinda boring...
+			else if (macClick=4)
+				toast Why do you keep clicking me?
+			else if (macClick=5)
+				toast <i><b>Yawn...</i></b> Let's make a game. Let's see how many times you can click me!
+			else if (macClick=10)
+				toast Wow. You've clicked me 10 times! That's kinda crazy to think about...<//>Here, take a <i>special gift</i> for being so kind. I think it'll help you a lot!<//>Just know from now on, <b><i>I won't do anything else special</b></i>. I'll only count the clicks. 
+			else
+				$zaClicks=macClick
+				toast You've clicked me [$zaClicks] times!
+			end
+		end
+ 
+ 
+//0.4 Changelogs: Added workplace (RENAMED TO CONSOLE) upgrades, (and scrapped one), and fixed a typo
+//0.45 Changelogs: Added more achievements (because the first one was a test lol)
+//0.46 Added (the actual) Workplace Upgrades and added in part of the in-game sprites in preparation for the Beta Release. (At this point I’m just stalling for the numbers)
+//0.5 Changelog: I basically just added too many beta features, so i suppose it's in beta now, but it's EXTREMELY CLOSE TO COMPLETION.
+//0.51 Changelog: 1 bajillion nerfs to make the early game more forgiving
+//0.6 Changelog: Added in the game bug feature and some new achievements...the game is INCREDIBLY CLOSE y'all
+//0.75 Changelog: Just here to fill space. When school calms down, I'll give an estimated release date.
+//0.8 Changelog: Fixed a problem involving bug clicks and [REDACTED] clicks saving over different play sessions, along with fleshing out the [REDACTED] storyline and providing a super secret gift to those who can click [REDACTED] 10 times.
+//0.9 Changelog: FINALLY added in the rest of the in-game sprites and the game is now ready to be sent out to a specially trained (not really) group of play testers (some of which have never played a game in their lives) to see what they think about it!
+ 
+//1.0 Changelog: FULL RELEASE BABY!!!! this game was like multiple months in the making, so enjoy!
+ 
+//Credits (people who helped me get ideas for code for specific things)
+//kasperja on Reddit for the controller level up visuals
+//Davtalas on Reddit for the upgrade filter idea, and the actual code for it
+ 
+//from now on, use this:#b09b00 for the gold color borders, and use #00ddff for the cyan background, for consistency's sake. Use #ff000d for the red stripes in the console upgrade backgrounds.
+//fame upgrades will add CPS onto controller clicks and multiply cps by a SMOL amount.
+ 
+//future update plan for the late game: Game Crash. This is a generational upgrade that’ll be unlocked in the very late game, after generation 7. It’ll be a rebirth, in a way. From there, more consoles and generations may be added, but those will be unfair and PUNISHING, and only unlocked via Game Crashes. Doing a game crash also unlocks Superconductors, a new premium currency used for the higher ranked consoles and a new tier upgrade. Superconductors can only be obtained by the first upgrade of game crashes, unlocking a tower that costs 1 trillion or billion or something high. It will also add superconductors to the prize pool for bugs. That tower will also produce superconductors once every 5 MINUTES
