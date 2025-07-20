@@ -11,5 +11,5 @@ Version 0.91 Changelogs (CURRENT VERSION)
 - Added Virus bugs which give a special currency & progress the Hacker storyline when clicked.
 - Added Antivirus fragments which progress the Hacker storyline & are used to purchase a special upgrade.
 - Nerfed the inflation rate of all consoles, specifically the Potato PC's inflation rate.
-- Changed the unlock conditions for Great Beginnings.
-- 
+- Changed the unlock conditions for the Great Beginnings achievement.
+- Added unlock criteria for New GPU, Color the Console!, & 
