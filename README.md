@@ -12,4 +12,15 @@ Version 0.91 Changelogs (CURRENT VERSION)
 - Added Antivirus fragments which progress the Hacker storyline & are used to purchase a special upgrade.
 - Nerfed the inflation rate of all consoles, specifically the Potato PC's inflation rate.
 - Changed the unlock conditions for the Great Beginnings achievement.
-- Added unlock criteria for New GPU, Color the Console!, & 
+- Added unlock criteria for the Color Enhancement, Color the Console!, & New GPU upgrades.
+- Added a brand new tutorial segment to ease newer players into the game & teach them about basic mechanics.
+- Added a new Arcade Machine console as part of the tutorial, as well as a corresponding upgrade.
+
+
+Upcoming Updates
+- Respriting of miscolored or non-pixel-perfect sprites. (e.g. the first controller sprite & the Potato PC sprite.)
+- Inflation buffs to the Alexandrox Gaming System & Game Dude, and inflation nerfs to the Potato PC.
+- Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime.
+- Nerfing the spawn rates for both bugs & viruses.
+- Fixing the antivirus upgrade not wiping out viruses.
+- Adding a boss to cap off Generation 1.
