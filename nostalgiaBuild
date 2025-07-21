@@ -1,1 +1,61 @@
-the pre-alpha build (the first ever build of the game) will be pasted here whenever I feel like going back to Pastebin.
+Let's make a game!
+	name:Game Clicker (Pre-Alpha)
+	author:Alexandrox
+	desc:Game Clicker is a Cookie Clicker inspired game made by <b>Alexandrox</b> where you control the entire game economy in a fun, bite-sized clicker full of innovative features. <//><i>I made this game because I'm in love with video-games and clickers, so I decided I wanted to make this. Have fun!</i> <//><#E4080A><i>Warning: This game is in <b>ALPHA</b> and may be prone to bugs and glitches, and just being unfinished in general.</i></#>
+	created:23/01/2025
+	updated:00/00/0000
+	version:0.10
+ 
+//I cloned it so I don't constantly have to look for the source code every time I want to find the pre-alpha files. 
+ 
+Settings
+	building cost increase:100%
+	building cost refund:75%
+//the refund value above can be changed at any time
+ 
+ 
+//add in the sprite command in the beta, because i'm still getting used to the engine...
+Layout
+	use default
+Buttons
+	*controllerButton
+		name:Do some gaming
+		desc:Click this to play video-games and earn money!
+		on click:yield 1 money
+Resources
+	*money
+		name:Money
+		desc: This is your money, which you can use to purchase consoles for your business and upgrades for it. Your goal is to make as much money as possible.
+ 
+Buildings
+	*console1
+		name:Alexandrox Gaming System|AGS
+		desc: The first console in the long line of consoles to come.<//><b>Effect:</b><.>Produces 1 money every second.
+		cost:100 money
+		on tick:yield 1 money
+		unlocked
+//The cost above may be altered in the final release!!!
+ 
+Upgrades
+	*controller
+		name:Controller Upgrade
+		desc:Your controller has leveled up to level 2!!!
+		cost:500 money
+		passive:increase money yield of controllerButton by 1
+		unlocked
+//the description, name, cost, and unlock requirements are all placeholders...
+ 
+//items below are the tiered upgrades...
+*AGSbronzeUpgrade
+	name:Bronze AGS
+	desc: Tier up your AGS to bronze for benefits!<//><b>Effect:</b><.>Alexandrox Gaming System production x2
+	cost:10000 money
+	passive:multiply yield of console1 by 2
+ 
+//new currencies will possibly be added in later updates...ahem diamonds
+ 
+Achievements
+	*gameTrophy1
+		name:Great beginnings
+		desc:Start your business!
+		req:1 money
