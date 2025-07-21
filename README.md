@@ -24,6 +24,7 @@ Upcoming Updates
 - Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime.
 - Nerfing the spawn rates for both bugs & viruses.
 - Fixing the antivirus upgrade not wiping out viruses.
+- Fixing the unintentional virus spawns in the tutorial.
 - Adding a boss to cap off Generation 1.
 - Changing the unlock conditions for Potato PC related upgrades.
 - Changing the unlock conditions for all console related achievements.
