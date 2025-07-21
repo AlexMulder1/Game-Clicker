@@ -5,6 +5,7 @@ While it's a major inconvenience for you, the player, it should be the last time
 Now, let's move onto the actual README. (This will be changed to CHANGELOGS later down the line.)
 
 Welcome to Game Clicker! It's a passion project made by the one & only Alexandrox and it's a fun clicker with a ton of things to do and will (inconsistently) be updated in the future! Enjoy the game.
+Also, there's multiple builds depending on what you want to play! (for the love of spoiler jesus don't play the dev build, it's really messy, sloppy, & gets changed constantly.) There's two builds as of now: The main build & the nostalgia build. The main build is the current version and the nostalgia build was the earliest version of Game Clicker, so play it if you want to see how the game evolved.
 
 Version 0.91 Changelogs (CURRENT VERSION)
 - Added the Hacker storyline.
