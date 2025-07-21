@@ -28,3 +28,5 @@ Upcoming Updates
 - Adding a boss to cap off Generation 1.
 - Changing the unlock conditions for Potato PC related upgrades.
 - Changing the unlock conditions for all console related achievements.
+- Fixing specific antivirus dialogues not showing.
+- Changing the description of the consoles to show current MPS instead of original MPS.
