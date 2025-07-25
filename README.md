@@ -30,3 +30,4 @@ Upcoming Updates
 - Changing the unlock conditions for all console related achievements.
 - Fixing specific antivirus dialogues not showing.
 - Changing the description of the consoles to show current MPS instead of original MPS.
+- Changing the unlock requirement of the controller upgrades to require clicks instead of money to encourage the player to click more as well as making the upgrade easier to obtain.
