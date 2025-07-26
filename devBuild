@@ -417,7 +417,7 @@ Upgrades
 		cost:100 antivirusFragment
 		passive:
 			multiply yield of tag:money by 2
-			hide gameVirus
+			multiply frequency of gameVirus by 100000
 		end
 		tag:generationUpgrade
 		req:1 antivirusFragment
