@@ -337,7 +337,7 @@ Upgrades
 		name:Generation 1
 		desc:Buy a new game store & some consoles in the process.<//><b>Effect:</b><.><i>Generation 1</i> of consoles is fully unlocked!
 		cost:250 money
-		passive:multiply frequency of gameVirus by 0.7
+		passive:multiply frequency of gameVirus by 0.5
 		tag:generationUpgrade
 		req:tutorialUpgrade
  
