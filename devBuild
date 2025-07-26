@@ -318,6 +318,15 @@ Buildings
 		req:pcUnlock
  
 Upgrades
+
+//Fake Upgrades
+	*starter
+		name:N/A
+		desc:N/A
+		cost:0 money
+		start with
+		on start:yield 1000000 virusFrequency
+		always hidden
  
 	*fameTest2
 		name:Fame Test
