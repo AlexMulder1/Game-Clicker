@@ -437,7 +437,7 @@ Upgrades
 		cost:50000 money
 		passive:
 			multiply money yield of console1 by 2
-			multiple console1pr yield of console1 by 2
+			multiply console1pr yield of console1 by 2
 		end
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
@@ -449,7 +449,7 @@ Upgrades
 		cost:100000 money
 		passive:
 			multiply money yield of pc1 by 2
-			multiple pc1pr yield of pc1 by 2
+			multiply pc1pr yield of pc1 by 2
 		end
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
