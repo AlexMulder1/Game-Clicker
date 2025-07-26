@@ -246,8 +246,9 @@ Buildings
 		unlocked
  
 	*console1
+		$moneyPerSecond=money:ps
 		name:Alexandrox Gaming System | AGS
-		desc:The first console in the long line of consoles to come.<//><b>Effect:</b><.>Produces 1 money every second.
+		desc:The first console in the long line of consoles to come.<//><b>Effect:</b><.>Produces [$moneyPerSecond] 1 money every second.
 		cost:100 money
 		on tick:yield 1 money
 		cost increase:105%
