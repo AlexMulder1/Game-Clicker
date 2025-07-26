@@ -321,7 +321,7 @@ Upgrades
 		desc:an upgrade to fix the long awaited bug. basically, you should see every bug at the start but never again on accident.
 		start with
 		always hidden
-		on start:
+		passive:
 			multiply frequency of gameVirus by 100000
 		end
 
