@@ -3,8 +3,8 @@ Let's make a game!
 	author:Alexandrox
 	desc:Game Clicker is a Cookie Clicker inspired game made by <b>Alexandrox</b> where you control the entire game economy in a fun, bite-sized clicker full of innovative features. <//><i>I made this game because I'm in love with video-games and clickers, so I decided I wanted to make this. Have fun!</i> <//><#E4080A><i>Warning: This game is in the middle of a <b>PLAYTEST</b> and may be prone to glitches, a lack of features, and balancing problems.</i></#><//><b>Update History:</b><.><i>Version 1.0</i>: After updating the game back and forth getting everything together for like a month, I finally finished the game! Enjoy Game Clicker!
 	created:23/01/2025
-	updated:12/04/2025
-	version:0.9
+	updated:25/07/2025
+	version:0.92
  
 //This is supposed to be the early game. If this is supposed to be the early game, then WHERE IN THE WORLD ARE THE FUN AND QUICK GRINDS? basically, every single thing in the game either needs a production buff or a price nerf. It’s supposed to be go from one thing to the next. Remember: this is the early game. It should be quick, and the number should go up fast. I thought about it, and…isn’t this stuff coming in the future updates? We got gold, chips, fame! Right now, what we have is the full game. It shouldn’t be a quick grind. (although I am buffing the game bug)
  
@@ -200,6 +200,31 @@ Resources
 		desc:This is your money, which you can use to purchase consoles for your business and upgrades for it. Your goal is to make as much money as possible.
 		icon class:shadowed
 		icon:https://i.postimg.cc/6QPjmS88/pixil-frame-0-4.png
+		tag:money
+
+	*tutorialBuildingpr
+		name:N/A
+		desc:N/A
+		tag:money
+		always hidden
+
+	*console1pr
+		name:N/A
+		desc:N/A
+		tag:money
+		always hidden
+
+	*portableConsole1pr
+		name:N/A
+		desc:N/A
+		tag:money
+		always hidden
+
+	*pc1pr
+		name:N/A
+		desc:N/A
+		tag:money
+		always hidden
  
 	*glitchClick
 		name:Bugs Fixed
@@ -239,35 +264,43 @@ Buildings
  
 	*tutorialBuilding
 		name:Arcade Machine
-		desc:A random arcade machine you got at a garage sale.<//><b>Effect:</b><.>Produces 0.1 money every second.
+		desc:A random arcade machine you got at a garage sale.<//><b>Effects:</b><.>Produces <b>[(tutorialBuildingpr:ps/tutorialBuilding)]</b> money per second.<.>Combined, they all produce <b>[tutorialBuildingpr:ps]</b> money per second.
 		cost:10 money
-		on tick:yield 0.1 money
+		on tick:
+			yield 0.1 money
+			yield 0.1 tutorialBuildingpr
 		limit:10
 		unlocked
  
 	*console1
 		name:Alexandrox Gaming System | AGS
-		desc:The first console in the long line of consoles to come.<//><b>Effect:</b><.>Produces 1 money every second.
+		desc:The first console in the long line of consoles to come.<//><b>Effects:</b><.>Produces <b>[(console1pr:ps/console1)]</b> money per second.<.>Combined, they all produce <b>[console1pr:ps]</b> money per second.
 		cost:100 money
-		on tick:yield 1 money
+		on tick:
+			yield 1 money
+			yield 1 console1pr
 		cost increase:105%
 		icon:https://i.postimg.cc/28ww2L86/console1.png
 		req:generationUp1
  
 	*portableConsole1
 		name:Game Dude | GD
-		desc:Dude, you better game! <//><b>Effect:</b><.>Produces 1 money every five seconds.
+		desc:Dude, you better game! <//><b>Effects:</b><.>Produces <b>[(portableConsole1pr:ps/portableConsole1)]</b> money per second.<.>Combined, they all produce <b>[portableConsole1pr:ps]</b> money per second.
 		cost:50 money
-		on tick:yield 0.20 money
+		on tick:
+			yield 0.2 money
+			yield 0.2 portableConsole1pr
 		cost increase:104%
 		icon:https://i.postimg.cc/MpKQjp9S/pixil-frame-0-1.png
 		req:consoleUnlock
  
 	*pc1
 		name:Potato PC | PPC
-		desc:I mean…it works? <//><b>Effect:</b><.>Produces 2.5 money every second.
+		desc:I mean…it works? <//><b>Effects:</b><.>Produces <b>[(pc1pr:ps/pc1)]</b> money per second.<.>Combined, they all produce <b>[pc1pr:ps]</b> money per second.
 		cost:200 money
-		on tick:yield 2.5 money
+		on tick:
+			yield 2.5 money
+			yield 2.5 pc1pr
 		cost increase:106%
 		icon:https://i.postimg.cc/zGFY4JNV/pixil-frame-0-3.png
 		req:pcUnlock
@@ -286,7 +319,10 @@ Upgrades
 		name:Enhanced Arcade Machine
 		desc:Give your arcade machines joysticks!<//><b>Effect:</b><.>The <i>arcade machine</i> now makes 10x as much money!
 		cost:100 money
-		passive:multiply money yield of tutorialBuilding by 10
+		passive:
+			multiply money yield of tutorialBuilding by 10
+			multiply tutorialBuildingpr yield of tutorialBuilding by 10
+		end
 		tag:consoleUpgrade
 		req:10 tutorialBuilding
  
@@ -372,7 +408,7 @@ Upgrades
 		desc:Finally get an antivirus to get rid of those pesky viruses.<//><b>Effect:</b><.><i>Viruses</i> will disappear forever.<.>2x multiplier to everything!
 		cost:100 antivirusFragment
 		passive:
-			multiply yield of money by 2
+			multiply yield of tag:money by 2
 			hide gameVirus
 		end
 		tag:generationUpgrade
@@ -383,7 +419,10 @@ Upgrades
 		name:Color Enhancement
 		desc:Add color to the amazing Game Dude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes 1 money every 2 seconds!
 		cost:25000 money
-		passive:multiply money yield of portableConsole1 by 2.5
+		passive:
+			multiply money yield of portableConsole1 by 2.5
+			multiply portableConsole1pr yield of portableConsole1 by 2.5
+		end
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
 		req:100 portableConsole1
@@ -392,7 +431,10 @@ Upgrades
 		name:Paint the Console!
 		desc:Paint the AGS with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes 2x as much money!
 		cost:50000 money
-		passive:multiply money yield of console1 by 2
+		passive:
+			multiply money yield of console1 by 2
+			multiple console1pr yield of console1 by 2
+		end
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
 		req:100 console1
@@ -401,7 +443,10 @@ Upgrades
 		name:New GPU
 		desc:Get a new, more colorful Graphics Processing Unit for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes 2x as much money!
 		cost:100000 money
-		passive:multiply money yield of pc1 by 2
+		passive:
+			multiply money yield of pc1 by 2
+			multiple pc1pr yield of pc1 by 2
+		end
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
 		req:100 pc1
