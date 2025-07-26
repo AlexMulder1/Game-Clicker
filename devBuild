@@ -269,6 +269,7 @@ Buildings
 		on tick:
 			yield 0.1 money
 			yield 0.1 tutorialBuildingpr
+		end
 		limit:10
 		unlocked
  
@@ -279,6 +280,7 @@ Buildings
 		on tick:
 			yield 1 money
 			yield 1 console1pr
+		end
 		cost increase:105%
 		icon:https://i.postimg.cc/28ww2L86/console1.png
 		req:generationUp1
@@ -290,6 +292,7 @@ Buildings
 		on tick:
 			yield 0.2 money
 			yield 0.2 portableConsole1pr
+		end
 		cost increase:104%
 		icon:https://i.postimg.cc/MpKQjp9S/pixil-frame-0-1.png
 		req:consoleUnlock
@@ -301,6 +304,7 @@ Buildings
 		on tick:
 			yield 2.5 money
 			yield 2.5 pc1pr
+		end
 		cost increase:106%
 		icon:https://i.postimg.cc/zGFY4JNV/pixil-frame-0-3.png
 		req:pcUnlock
