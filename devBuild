@@ -59,7 +59,7 @@ Buttons
 			else if (money=10 and tutorialStep=1)
 				toast Great! Now, let's buy it.
 				yield 1 tutorialStep
-			else if (tutorialBuilding=1 and tutorialStep=2)
+			else if (tutorialBuilding>=1 and tutorialStep=2)
 				toast Did you notice how you're making money without even clicking the controller? That's what the <b><i>consoles</i></b> do. Go ahead and buy 9 more arcade machines.
 				yield 1 tutorialStep
 			else if (tutorialBuilding=10 and tutorialStep=3)
