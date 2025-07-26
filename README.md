@@ -32,3 +32,5 @@ Upcoming Updates
 - Changing the description of the consoles to show current MPS instead of original MPS.
 - Changing the unlock requirement of the controller upgrades to require clicks instead of money to encourage the player to click more as well as making the upgrade easier to obtain.
 - Adding a whole new minigame section of the game which can be triggered via "Minigames" in the upgrade shop. The first minigame will be Bug Buster, where a lot of bugs appear on screen for 30 seconds. The cooldown will be 10 minutes.
+- Finishing the sprites for everything that's unsprited. (THIS COMES LAST.)
+- The possible addition of new modes later down the line. (Permanent Bug Buster???)
