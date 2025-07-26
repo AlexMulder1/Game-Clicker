@@ -228,11 +228,6 @@ Resources
 		desc:N/A
 		tag:money
 		always hidden
-
-	*virusFrequency
-		name:N/A
-		desc:N/A
-		always hidden
  
 	*glitchClick
 		name:Bugs Fixed
@@ -318,15 +313,6 @@ Buildings
 		req:pcUnlock
  
 Upgrades
-
-//Fake Upgrades
-	*starter
-		name:N/A
-		desc:N/A
-		cost:0 money
-		start with
-		on start:yield 1000000 virusFrequency
-		always hidden
  
 	*fameTest2
 		name:Fame Test
@@ -351,7 +337,7 @@ Upgrades
 		name:Generation 1
 		desc:Buy a new game store & some consoles in the process.<//><b>Effect:</b><.><i>Generation 1</i> of consoles is fully unlocked!
 		cost:250 money
-		on earn:virusFrequency is 60
+		passive:multiply frequency of gameVirus by 100
 		tag:generationUpgrade
 		req:tutorialUpgrade
  
@@ -428,8 +414,10 @@ Upgrades
 		name:Antivirus
 		desc:Finally get an antivirus to get rid of those pesky viruses.<//><b>Effect:</b><.><i>Viruses</i> will disappear forever.<.>2x multiplier to everything!
 		cost:100 antivirusFragment
-		passive:multiply yield of tag:money by 2
-		on earn:virusFrequency is 0
+		passive:
+			multiply yield of tag:money by 2
+			hide gameVirus
+		end
 		tag:generationUpgrade
 		req:1 antivirusFragment
  
@@ -723,7 +711,7 @@ Shinies
  
 	*gameVirus
 		movement:anywhere fade growShrink spinRandom
-		frequency:virusFrequency
+		frequency:0.1
 		icon:https://i.postimg.cc/d0T7Kc3H/game-Virus.png
 		class:bigButton
 		on click:
