@@ -228,11 +228,6 @@ Resources
 		desc:N/A
 		tag:money
 		always hidden
-
-	*virusKey
-		name:Virus Key
-		desc:Is a resource that enables the spawn of Viruses.
-		hidden when 0
  
 	*glitchClick
 		name:Bugs Fixed
@@ -344,7 +339,6 @@ Upgrades
 		name:Generation 1
 		desc:Buy a new game store & some consoles in the process.<//><b>Effect:</b><.><i>Generation 1</i> of consoles is fully unlocked!
 		cost:250 money
-		on earn:yield 1 virusKey
 		tag:generationUpgrade
 		req:tutorialUpgrade
  
@@ -721,7 +715,7 @@ Shinies
 		frequency:60
 		icon:https://i.postimg.cc/d0T7Kc3H/game-Virus.png
 		class:bigButton
-		req:1 virusKey
+		req:generationUp1
 		on click:
 			yield 1 antivirusFragment
 			if (antivirusFragment=1)
