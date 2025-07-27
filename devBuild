@@ -453,38 +453,29 @@ Upgrades
 	*color
 		name:Color Enhancement
 		desc:Add color to the amazing Game Dude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes 1 money every 2 seconds!
-		cost:25000 money
-		passive:
-			multiply money yield of portableConsole1 by 2.5
-			multiply portableConsole1pr yield of portableConsole1 by 2.5
-		end
+		cost:30000 money
+		passive:multiply yield of portableConsole1 by 2.5
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
-		req:100 portableConsole1
+		req:60 portableConsole1
  
 	*paintIt
 		name:Paint the Console!
 		desc:Paint the AGS with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes 2x as much money!
-		cost:50000 money
-		passive:
-			multiply money yield of console1 by 2
-			multiply console1pr yield of console1 by 2
-		end
+		cost:70000 money
+		passive:multiply yield of console1 by 2
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
-		req:100 console1
+		req:50 console1
  
 	*newGPU
 		name:New GPU
 		desc:Get a new, more colorful Graphics Processing Unit for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes 2x as much money!
 		cost:100000 money
-		passive:
-			multiply money yield of pc1 by 2
-			multiply pc1pr yield of pc1 by 2
-		end
+		passive:multiply yield of pc1 by 2
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
-		req:100 pc1
+		req:40 pc1
  
 //Workplace Upgrades
 	*newChair
@@ -642,15 +633,15 @@ Achievements
  
 	*agsTrophy3
 		name:Nintendon’t Mess With Me
-		desc:Buy 100 AGSes!...wait, what do you mean NES?
+		desc:Buy 50 AGSes!...wait, what do you mean NES?
 		icon:https://i.postimg.cc/hjdthrdy/AGSTrophy3.png
-		req:100 console1
+		req:50 console1
  
 	*agsTrophy4
 		name:8-Bit Legends
-		desc:Buy 1K AGSes! Jeez, you're legendary!
+		desc:Buy 125 AGSes! Jeez, you're legendary!
 		icon:https://i.postimg.cc/wTHjTDT2/AGSTrophy4.png
-		req:1000 console1
+		req:125 console1
  
 	*gdTrophy1
 		name:Portable Revolution
@@ -660,21 +651,21 @@ Achievements
  
 	*gdTrophy2
 		name:Colorless Green
-		desc:Buy 10 GameDudes! (unfortunately they don't play in color)
+		desc:Buy 25 GameDudes! (unfortunately they don't play in color)
 		icon:https://i.postimg.cc/RZShGKkh/GDTrophy2.png
-		req:10 portableConsole1
+		req:25 portableConsole1
  
 	*gdTrophy3
 		name:Gotta Catch 'em All!
-		desc:Catch 100 GameDudes! I just need to finish my GameDude collection...
+		desc:Catch 75 GameDudes! I just need to finish my GameDude collection...
 		icon:https://i.postimg.cc/RVQqcXb2/GDTrophy3.png
-		req:100 portableConsole1
+		req:75 portableConsole1
  
 	*gdTrophy4
 		name:Master of Portability
-		desc:Buy 1K GameDudes! Jeez, you've mastered the Game, Dude!
+		desc:Buy 200 GameDudes! Jeez, you've mastered the Game, Dude!
 		icon:https://i.postimg.cc/t4BTc7b5/GDTrophy4.png
-		req:1000 portableConsole1
+		req:200 portableConsole1
  
 	*potatoPCTrophy1
 		name:The Power of Vegetables
@@ -690,15 +681,15 @@ Achievements
  
 	*potatoPCTrophy3
 		name:Poisonous Potato Mayhem
-		desc:Buy 100 Potato PCs! THEY CAN CONTRACT VIRUSES?!
+		desc:Buy 70 Potato PCs! THEY CAN CONTRACT VIRUSES?!
 		icon:https://i.postimg.cc/wTVTt31p/PPCTrophy3.png
-		req:100 pc1
+		req:50 pc1
  
 	*potatoPCTrophy4
 		name:A Powerful Potato
-		desc:Buy 1K Potato PCs! Oh wow, they're more powerful than consoles!
+		desc:Buy 100 Potato PCs! Oh wow, they're more powerful than consoles!
 		icon:https://i.postimg.cc/hv841tMV/PPCTrophy4.png
-		req:1000 pc1
+		req:100 pc1
  
 	*allRounder
 		name:All Rounder
@@ -774,48 +765,27 @@ Shinies
 			yield 1 antivirusFragment
 			if (antivirusFragment=1)
 				toast Muahahaha...did you really think your computer was safe from me? Well, it isn't. I can infiltrate any system with the click of a button...see you.
-			else if (antivirusFragment=2)
-				toast Oh, how we meet again! It's so fun seeing everything slow down while I steal all your info in the process.
-			else if (antivirusFragment=3)
-				toast You're just gonna keep trying to exterminate my virus like that? Heh. It doesn't work like that, buddy. You can keep trying, though. I won't stop you.
-			else if (antivirusFragment=4)
-				toast HA! This is just priceless. Do you actually think you're doing anything?
-			else if (antivirusFragment=5)
-				toast Wait...what? You're building an antivirus to stop MY virus? Heh. That's funny...wait...oh, that's not good.
 			else if (antivirusFragment=10)
-				toast I'm not going to let you stop me! Stop building that antivirus before I do something to you!
-			else if (antivirusFragment=15)
-				toast Grr...you're going to keep going, aren't you?
+				toast Do you seriously think you're going to exterminate my virus by clicking them? Heh, it doesn't work like that.
 			else if (antivirusFragment=20)
-				toast You're definitely the most...interesting person I've hacked.
-			else if (antivirusFragment=25)
-				toast Honestly, I have no idea what I'm doing.
-			else if (antivirusFragment=30)
-				toast Also, you're actually the first person I've ever hacked...
+				toast Wait...you're making an antivirus? That's...fascinating. Not good, though.
 			else if (antivirusFragment=40)
-				toast Ugh! I should be stealing all your info, not becoming friends with you!
+				toast You know what...even though your PC's done for, there's a kind of...elegance, to it...who are you, really?
 			else if (antivirusFragment=50)
-				toast Great. You're halfway done with that...brr...antivirus of yours. I'm not happy about this, you know that?!
-			else if (antivirusFragment=60)
-				toast ...sigh...I've lost all hope in stealing everything from you.
+				toast Halfway done? I'm not going to lose like this. <i>I won't...</i>
 			else if (antivirusFragment=70)
-				toast You know what? Maybe being friends with you isn't that bad.
+				toast You aren't that bad. At first, I thought you'd be like the others. They would be all scared & try to destroy my programs & continue to hate me. But you? You're different. Cold, calculated. You aren't scared, either. You don't act irrationally. It's weird seeing somebody like you. Like...her.
 			else if (antivirusFragment=80)
-				toast How much money do you have? Oh wow, that's a lot!
+				toast Her? She's...somebody I used to know. She was meant the entire world to me. Then those <i>little rude brats</i> robbed her away from me. They called me a weird nerd who has nothing good about him, and a whole slew of other things. She promised me she would return when they were dealt with...<i>she never came back.</i> I swore from that day onwards to always hack those who deserved it...which led to you.
 			else if (antivirusFragment=90)
-				toast ...I've thought about this for a bit, and what if we share our passwords with each other? No?...
-			else if (antivirusFragment>90)
-				toast ...
-			else if (antivirusFragment=99)
-				toast DON'T FINISH THE ANTIVIRUS. I...NEED...IT...i can't let you finish this. 
+				toast 90 antivirus fragments, huh? Good job. You've worked hard for it. It's a shame we're on opposite sides...we'd be good friends.
 			else if (antivirusFragment=100)
-				toast You know what? I'M DONE WITH YO-...<b>Connection Terminated.</b>
+				toast You know what? <i><b>NO</i></b>. <i>Why should I give up all of this for you? WHY SHOULD I TRUST YOU?! HOW DO I KNOW YOU'RE NOT LIKE THE OTHERS?!!</i> Liar. <b><i>LIAR! I'M DONE WITH YO-</b></i>...Connection terminated. ...I've thought about this for a bit, and what if we share our passwords with each other? No?...
 			else
 				$fragment=antivirusFragment
 				toast <b>[$fragment]</b> antivirus fragments have been collected. Keep going, and finish the antivirus.
 			end
 		end
-		hidden
  
 	*mac
 		movement:onBottom onLeft moveRight bounce
