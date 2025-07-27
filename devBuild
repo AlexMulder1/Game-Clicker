@@ -537,7 +537,7 @@ Upgrades
 		name:Mac's Gift
 		desc:A gift Mac gave you for being such a good friend & clicking him 10 times.<//><b>Effect:</b><.>Increases the money earned by clicking your controller by a super secret amount.
 		cost:0 money
-		passive:multiply yield of tag:controllerButton by macClick
+		passive:multiply money yield of tag:controllerButton by macClick
 		icon:https://i.postimg.cc/hjpN8pj0/mac-Upgrade.png
 		tag:generationUpgrade
 		req:macClick>=10
