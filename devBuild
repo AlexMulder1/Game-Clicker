@@ -766,7 +766,7 @@ Shinies
 			if (antivirusFragment=1)
 				toast Muahahaha...did you really think your computer was safe from me? Well, it isn't. I can infiltrate any system with the click of a button...see you.
 			else if (antivirusFragment=10)
-				toast Do you seriously think you're going to exterminate my virus by clicking them? Heh, it doesn't work like that.
+				toast Do you seriously think you're going to exterminate my virus by clicking those little ones? Heh, it doesn't work like that.
 			else if (antivirusFragment=20)
 				toast Wait...you're making an antivirus? That's...fascinating. Not good, though.
 			else if (antivirusFragment=40)
