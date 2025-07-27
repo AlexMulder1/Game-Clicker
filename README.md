@@ -20,17 +20,19 @@ Version 0.91 Changelogs (CURRENT VERSION)
 
 Upcoming Updates (√ means they've been added/patched in the dev build & are coming next update.)
 - Respriting of miscolored or non-pixel-perfect sprites. (e.g. the first controller sprite & the Potato PC sprite.)
-- Inflation buffs to the Alexandrox Gaming System & Game Dude, and inflation nerfs to the Potato PC. [√]
 - Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime.
-- Nerfing the spawn rates for both bugs & viruses.
-- Fixing the antivirus upgrade not wiping out viruses.
-- Fixing the unintentional virus spawns in the tutorial.
 - Adding a boss to cap off Generation 1.
-- Changing the unlock conditions for Potato PC related upgrades.
-- Changing the unlock conditions for all console related achievements.
-- Fixing specific antivirus dialogues not showing.
-- Adding additional details about MPS in the console descriptions. [√]
-- Changing the unlock requirement of the controller upgrades to require clicks instead of money to encourage the player to click more as well as making the upgrade easier to obtain.
 - Adding a whole new minigame section of the game which can be triggered via "Minigames" in the upgrade shop. The first minigame will be Bug Buster, where a lot of bugs appear on screen for 30 seconds. The cooldown will be 10 minutes.
 - Finishing the sprites for everything that's unsprited. (THIS COMES LAST.)
 - The possible addition of new modes later down the line. (Permanent Bug Buster???)
+- Adding new click-based achievements. [√]
+- Fixing a tutorial sequence break that occurs when buying 2 or more arcade machines, then clicking. Also added a tidbit on controller upgrades & how to get them. [√]
+- Changing the unlock requirement of the controller upgrades to require clicks instead of money to encourage the player to click more as well as making the upgrade easier to obtain. [√]
+- Adding additional details about MPS in the console descriptions. [√]
+- Nerfing the spawn rates for both bugs & viruses. [√]
+- Fixing the antivirus upgrade not wiping out viruses. [√]
+- Fixing the unintentional virus spawns in the tutorial. [√]
+- Inflation buffs to the Alexandrox Gaming System & Game Dude, and inflation nerfs to the Potato PC. [√]
+- Changing the unlock conditions for console related upgrades and increasing the price of Color Enhancement & Paint the Console!. [√]
+- Changing the unlock conditions for all console related achievements. [√]
+- Completely remaking the hacker's story while also fixing a frequent bug where his lines would stop appearing after collecting 30 antivirus fragments. [√]
