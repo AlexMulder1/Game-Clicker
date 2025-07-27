@@ -26,7 +26,7 @@ Upcoming Updates (√ means they've been added/patched in the dev build & are co
 - Finishing the sprites for everything that's unsprited. (THIS COMES LAST.)
 - The possible addition of new modes later down the line. (Permanent Bug Buster???)
 - Adding new click-based achievements. [√]
-- Fixing a tutorial sequence break that occurs when buying 2 or more arcade machines, then clicking. Also added a tidbit on controller upgrades & how to get them. [√]
+- Fixing a tutorial sequence break that occurs when buying 2 or more arcade machines, then clicking. Also added a tidbit on controller upgrades & how to get them. Third, made the line asking you to buy arcade machines adaptive to how many you currently have. [√]
 - Changing the unlock requirement of the controller upgrades to require clicks instead of money to encourage the player to click more as well as making the upgrade easier to obtain. [√]
 - Adding additional details about MPS in the console descriptions. [√]
 - Nerfing the spawn rates for both bugs & viruses. [√]
