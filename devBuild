@@ -61,7 +61,7 @@ Buttons
 				toast Great! Now, let's buy it.
 				yield 1 tutorialStep
 			else if (tutorialBuilding>=1 and tutorialStep=2)
-				toast Did you notice how you're making money without even clicking the controller? That's what the <b><i>consoles</i></b> do. Go ahead and buy 9 more arcade machines.
+				toast Did you notice how you're making money without even clicking the controller? That's what the <b><i>consoles</i></b> do. Go ahead and buy [(10-tutorialBuilding)] more arcade machines.
 				yield 1 tutorialStep
 			else if (tutorialBuilding=10 and tutorialStep=3)
 				toast Great! Now that we have 10 of these, we can upgrade the arcade machines to perform even better than before! You can find it in <b>Console Upgrades</b>. <//><i>Get 100 <b>money</b>!</I>
