@@ -20,7 +20,7 @@ Version 0.91 Changelogs (CURRENT VERSION)
 
 Upcoming Updates (√ means they've been added/patched in the dev build & are coming next update.)
 - Respriting of miscolored or non-pixel-perfect sprites. (e.g. the first controller sprite & the Potato PC sprite.)
-- Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime.
+- Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime. (i.e. expansions to pre-existing upgrades, revamps to workplace upgrades, and adding a new upgrade category)
 - Adding a boss to cap off Generation 1.
 - Adding a whole new minigame section of the game which can be triggered via "Minigames" in the upgrade shop. The first minigame will be Bug Buster, where a lot of bugs appear on screen for 30 seconds. The cooldown will be 10 minutes.
 - Finishing the sprites for everything that's unsprited. (THIS COMES LAST.)
