@@ -190,12 +190,23 @@ Buttons
  
 	*generationUpgrades
 		name:Generation Upgrades
-		desc:Unlock the PC & GameDude!
+		desc:Advance the game.
 		tag:upgradeSwitcher
 		on click:
 			show tag:generationUpgrade
 			hide :Upgrades:notTag:generationUpgrade
 			anim glow
+		end
+		tooltip origin:bottom
+
+	*specialtyUpgrades
+		name:Specialty Upgrades
+		desc:Buy unique upgrades using those bug remnants of yours.
+		tag:upgradeSwitcher
+		on click:
+		show tag:specialtyUpgrade
+		hide :Upgrades:notTag:specialtyUpgrade
+		anim glow
 		end
 		tooltip origin:bottom
  
@@ -208,6 +219,12 @@ Resources
 		icon class:shadowed
 		icon:https://i.postimg.cc/6QPjmS88/pixil-frame-0-4.png
 		tag:money
+
+	*bugRemnant
+		name:Bug Remnant
+		desc:This is a bug remnant, which you collect from fixing the bugs that pop up occasionally. You can use these to purchase special upgrades that have all kinds of special effects.
+		icon class:shadowed
+		
 
 //Fake Resources
 
@@ -522,6 +539,15 @@ Upgrades
 		icon:https://i.postimg.cc/0y22Pwqh/workplace-Upgrade5.png
 		tag:workplaceUpgrade
 		req:newBed
+
+//Specialty Upgrades
+	*sloppyCode
+		name:Sloppy Code
+		desc:Somehow get sloppier at programming. <//><b>Effect:</b><.>Causes bugs to appear more frequently.
+		cost:10 bugRemnant
+		passive:multiply frequency of gameBug by 0.8
+		tag:specialtyUpgrade
+		req:5 glitchClick
  
 //Super Secret Upgrade!!!
 	*secretUpgrade
@@ -746,8 +772,9 @@ Shinies
 		class:bigButton
 		on click:
 			$amount=max(random(money:ps*1,money:ps*60))
-			toast Fixing the Game Bug granted you<//><b>[$amount] money</b>!
+			toast Fixing the Game Bug granted you<//><b>[$amount] money</b> and a <b>bug remnant</b>!
 			yield $amount money
+			yield 1 bugRemnant
 			yield 1 glitchClick
 			if (glitchClick=1)
 				toast What you just clicked was a <b><i>game bug.</b></i> Whenever they appear onscreen, you should <b>always</b> click them for all kinds of special rewards.
