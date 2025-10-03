@@ -599,7 +599,7 @@ Upgrades
 		name:Critical Click
 		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
-		on earn:yield 1 critBonus
+		on earn:grant 1 critBonus
 		tag:specialtyUpgrade
 		req:sloppyCode
 
@@ -607,7 +607,7 @@ Upgrades
 		name:Super Critical Click
 		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>When getting a critical click, you now earn <b>3x</b> the amount of money.
 		cost:50 bugRemnant
-		passive:yield 1 critBonus
+		passive:grant 1 critBonus
 		tag:specialtyUpgrade
 		req:criticalClick
 
