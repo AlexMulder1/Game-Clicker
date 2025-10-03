@@ -88,7 +88,8 @@ Buttons
 		on click:
 			yield 2 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 2 money
+			$critMoney=2*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -104,7 +105,8 @@ Buttons
 		on click:
 			yield 4 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 4 money
+			$critMoney=4*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -120,7 +122,8 @@ Buttons
 		on click:
 			yield 8 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 8 money
+			$critMoney=8*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -136,7 +139,8 @@ Buttons
 		on click:
 			yield 16 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 16 money
+			$critMoney=16*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -152,7 +156,8 @@ Buttons
 		on click:
 			yield 32 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 32 money
+			$critMoney=32*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
