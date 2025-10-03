@@ -54,6 +54,7 @@ Buttons
 			$critRate=10
 			if (have criticalClick2)
 				$critRate=25
+			end
 			yield 1 money
 			yield 1 controllerClick
 			if (have criticalClick and chance([$critRate]%)) yield 1 money
