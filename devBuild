@@ -54,7 +54,7 @@ Buttons
 			yield 1 money
 			yield 1 controllerClick
 			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 2 money
+			if (have criticalClick and chance($critRate%)) yield 1 money
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
@@ -88,8 +88,8 @@ Buttons
 		on click:
 			yield 2 money
 			yield 1 controllerClick
-			$critMoney=2*critBonus
-			if (have criticalClick and chance(10%)) yield $critMoney money
+			$critRate=critRate
+			if (have criticalClick and chance($critRate%)) yield 2 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -105,8 +105,8 @@ Buttons
 		on click:
 			yield 4 money
 			yield 1 controllerClick
-			$critMoney=4*critBonus
-			if (have criticalClick and chance(10%)) yield $critMoney money
+			$critRate=critRate
+			if (have criticalClick and chance($critRate%)) yield 4 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -122,8 +122,8 @@ Buttons
 		on click:
 			yield 8 money
 			yield 1 controllerClick
-			$critMoney=8*critBonus
-			if (have criticalClick and chance(10%)) yield $critMoney money
+			$critRate=critRate
+			if (have criticalClick and chance($critRate%)) yield 8 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -139,8 +139,8 @@ Buttons
 		on click:
 			yield 16 money
 			yield 1 controllerClick
-			$critMoney=16*critBonus
-			if (have criticalClick and chance(10%)) yield $critMoney money
+			$critRate=critRate
+			if (have criticalClick and chance($critRate%)) yield 16 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -156,8 +156,8 @@ Buttons
 		on click:
 			yield 32 money
 			yield 1 controllerClick
-			$critMoney=32*critBonus
-			if (have criticalClick and chance(10%)) yield $critMoney money
+			$critRate=critRate
+			if (have criticalClick and chance($critRate%)) yield 32 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
