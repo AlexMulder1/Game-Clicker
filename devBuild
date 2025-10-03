@@ -590,6 +590,7 @@ Upgrades
 		desc:You learned how to collect more info off of bugs. <//><b>Effect:</b><.>Bugs now drop <b>2 bug remnants</b>.
 		cost:50 bugRemnant
 		passive:multiply bugRemnant yield of gameBug by 2
+		tag:specialtyUpgrade
 		req:bugBounty
 
 	*sloppierCode
@@ -597,7 +598,7 @@ Upgrades
 		desc:Somehow get even sloppier at programming. <//><b>Effect:</b><.>Causes bugs to appear significantly more frequently.
 		cost:100 bugRemnant
 		passive:multiply frequency of gameBug by 0.5
-		tag:specialty Upgrade
+		tag:specialtyUpgrade
 		req:reverseEngineering
 
 	*criticalClick
