@@ -53,6 +53,7 @@ Buttons
 		on click:
 			yield 1 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 1 money
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
@@ -86,6 +87,7 @@ Buttons
 		on click:
 			yield 2 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 2 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -101,6 +103,7 @@ Buttons
 		on click:
 			yield 4 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 4 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -116,6 +119,7 @@ Buttons
 		on click:
 			yield 8 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 8 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -131,6 +135,7 @@ Buttons
 		on click:
 			yield 16 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 16 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -146,6 +151,7 @@ Buttons
 		on click:
 			yield 32 money
 			yield 1 controllerClick
+			if (have criticalClick and chance(10%)) yield 32 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -547,7 +553,14 @@ Upgrades
 		cost:10 bugRemnant
 		passive:multiply frequency of gameBug by 0.8
 		tag:specialtyUpgrade
-		req:5 glitchClick
+		req:5 bugRemnant
+
+	*criticalClick
+		name:Critical Click
+		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>1/10</b> chance of clicking the controller twice.
+		cost:25 bugRemnant
+		tag:specialtyUpgrade
+		req:10 bugRemnant
  
 //Super Secret Upgrade!!!
 	*secretUpgrade
@@ -766,8 +779,8 @@ Shinies
  
 	*gameBug
 		movement:anywhere fade growShrink spinRandom
-		frequency:75
-		frequency variation:30
+		frequency:10
+		frequency variation:10
 		icon:https://i.postimg.cc/vTQRf7v8/pixil-frame-0-2.png
 		class:bigButton
 		on click:
