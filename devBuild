@@ -51,13 +51,10 @@ Buttons
 		name:Do some gaming!
 		desc:Click this to play video-games and earn money!
 		on click:
-			$critRate=10
-			if (have criticalClick2)
-				$critRate=25
-			end
 			yield 1 money
 			yield 1 controllerClick
-			if (have criticalClick and chance([$critRate]%)) yield 1 money
+			$critMoney=1*critBonus
+			if (have criticalClick and chance(10%)) yield $critMoney money
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
@@ -237,6 +234,11 @@ Resources
 		
 
 //Fake Resources
+
+	*critBonus
+		name:Critical Click Bonus
+		desc:stupid thing used for stupid mechanic
+		always hidden
 
 	*controllerClick
 		name:Controller Clicks
@@ -578,7 +580,7 @@ Upgrades
 		name:Sloppier Code
 		desc:Somehow get even sloppier at programming. <//><b>Effect:</b><.>Causes bugs to appear significantly more frequently.
 		cost:100 bugRemnant
-		passive:multiple frequency of gameBug by 0.5
+		passive:multiply frequency of gameBug by 0.5
 		tag:specialty Upgrade
 		req:reverseEngineering
 
@@ -586,20 +588,23 @@ Upgrades
 		name:Critical Click
 		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
+		passive:grant 1 critBonus
 		tag:specialtyUpgrade
 		req:sloppyCode
 
 	*criticalClick2
-		name:Consistent Critical Click
-		desc:Figure out a more consistent method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>25%</b> chance of clicking the controller twice.
+		name:Super Critical Click
+		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Getting a critical click gives you <b>3x</b> the amount of money.
 		cost:50 bugRemnant
+		passive:grant 1 critBonus
 		tag:specialtyUpgrade
 		req:criticalClick
 
 	*criticalClick3
-		name:Super Critical Click
-		desc:Figure out a way to make the buttons on your very controller explode. <//><b>Effect:</b><.>Gives you a <b>1%</b> chance of clicking the controller thrice on top of your critical click.
+		name:Mega Critical Click
+		desc:Figure out a way to make the buttons on your very controller explode. <//><b>Effect:</b><.>Getting a critical click gives you <b>3x</b> the amount of money.
 		cost:100 bugRemnant
+		passive:grant 1 critBonus
 		tag:specialtyUpgrade
 		req:criticalClick2
  
