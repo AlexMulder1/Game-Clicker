@@ -53,7 +53,13 @@ Buttons
 		on click:
 			yield 1 money
 			yield 1 controllerClick
-			if (have criticalClick and chance(10%)) yield 1 money
+			if (have criticalClick3)
+				if (chance(1%)) yield 2 money
+				elseif (chance(24%))yield 1 money
+			elseif (have criticalClick2)
+				if (chance(25%)) yield 1 money
+			elseif (have criticalClick1)
+				if (chance(10%)) yield 1 money
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
@@ -549,18 +555,55 @@ Upgrades
 //Specialty Upgrades
 	*sloppyCode
 		name:Sloppy Code
-		desc:Somehow get sloppier at programming. <//><b>Effect:</b><.>Causes bugs to appear more frequently.
+		desc:Get a little sloppy at programming. <//><b>Effect:</b><.>Causes bugs to appear more frequently.
 		cost:10 bugRemnant
 		passive:multiply frequency of gameBug by 0.8
 		tag:specialtyUpgrade
 		req:5 bugRemnant
 
+	*bugBounty
+		name:Bug Bounty
+		desc:There is now a bounty placed on bugs. <//><b>Effect:</b><.>Bugs are worth <b>2x</b> as much.
+		cost:25 bugRemnant
+		passive:multiply money yield of gameBug by 2
+		tag:specialtyUpgrade
+		req:sloppyCode
+
+	*reverseEngineering
+		name:Reverse Engineering
+		desc:You learned how to collect more info off of bugs. <//><b>Effect:</b><.>Bugs now drop <b>2 bug remnants</b>.
+		cost:50 bugRemnant
+		passive:multiply bugRemnant yield of gameBug by 2
+		req:bugBounty
+
+	*sloppierCode
+		name:Sloppier Code
+		desc:Somehow get even sloppier at programming. <//><b>Effect:</b><.>Causes bugs to appear significantly more frequently.
+		cost:100 bugRemnant
+		passive:multiple frequency of gameBug by 0.5
+		tag:specialty Upgrade
+		req:reverseEngineering
+
 	*criticalClick
 		name:Critical Click
-		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>1/10</b> chance of clicking the controller twice.
+		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
 		tag:specialtyUpgrade
 		req:sloppyCode
+
+	*criticalClick2
+		name:Consistent Critical Click
+		desc:Figure out a more consistent method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>25%</b> chance of clicking the controller twice.
+		cost:50 bugRemnant
+		tag:specialtyUpgrade
+		req:criticalClick
+
+	*criticalClick3
+		name:Super Critical Click
+		desc:Figure out a way to make the buttons on your very controller explode. <//><b>Effect:</b><.>Gives you a <b>1%</b> chance of clicking the controller thrice on top of your critical click.
+		cost:100 bugRemnant
+		tag:specialtyUpgrade
+		req:criticalClick2
  
 //Super Secret Upgrade!!!
 	*secretUpgrade
