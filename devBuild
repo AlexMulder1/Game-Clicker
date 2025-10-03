@@ -847,7 +847,11 @@ Shinies
 		class:bigButton
 		on click:
 			$amount=max(random(money:ps*1,money:ps*60))
-			toast Fixing the Game Bug granted you<//><b>[$amount] money</b> and a <b>bug remnant</b>!
+			if (have bugBounty)
+				toast Fixing the Game Bug granted you<//><b>[($amount*2)] money</b> and a <b>bug remnant</b>!
+			else
+				toast Fixing the Game Bug granted you<//><b>[$amount] money</b> and a <b>bug remnant</b>!
+			end
 			yield $amount money
 			yield 1 bugRemnant
 			yield 1 glitchClick
