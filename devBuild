@@ -210,9 +210,9 @@ Buttons
 		desc:Buy unique upgrades using those bug remnants of yours.
 		tag:upgradeSwitcher
 		on click:
-		show tag:specialtyUpgrade
-		hide :Upgrades:notTag:specialtyUpgrade
-		anim glow
+			show tag:specialtyUpgrade
+			hide :Upgrades:notTag:specialtyUpgrade
+			anim glow
 		end
 		tooltip origin:bottom
  
