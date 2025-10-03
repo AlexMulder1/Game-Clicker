@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Game Clicker (Playtest)
 	author:Alexandrox
-	desc:Game Clicker is a Cookie Clicker inspired game made by <b>Alexandrox</b> where you control the entire game economy in a fun, bite-sized clicker full of innovative features. <//><i>I made this game because I'm in love with video-games and clickers, so I decided I wanted to make this. Have fun!</i> <//><#E4080A><i>Warning: This game is in the middle of a <b>PLAYTEST</b> and may be prone to GLITCHES, a lack of features, and balancing problems.</i></#><//><b>Update History:</b><.><i>Version 1.0</i>: After updating the game back and forth getting everything together for like a month, I finally finished the game! Enjoy Game Clicker!
+	desc:Game Clicker is a Cookie Clicker inspired game made by <b>Alexandrox</b> where you control the entire game economy in a fun, bite-sized clicker full of innovative features. <//><i>I made this game because I'm in love with video-games and clickers, so I decided I wanted to make this. Have fun!</i> <//><#E4080A><i>Warning: This game is in the middle of a <b>PLAYTEST</b> and may be prone to glitches, a lack of features, and balancing problems.</i></#><//><b>Update History:</b><.><i>Version 1.0</i>: After updating the game back and forth getting everything together for like a month, I finally finished the game! Enjoy Game Clicker!
 	created:23/01/2025
 	updated:25/07/2025
 	version:0.92
@@ -180,6 +180,7 @@ Buttons
 		on click:
 			show tag:controllerUpgrade
 			hide :Upgrades:notTag:controllerUpgrade
+			hide :Upgrades:owned
 			anim glow
 		end
 		tooltip origin:bottom
@@ -191,6 +192,7 @@ Buttons
 		on click:
 			show tag:consoleUpgrade
 			hide :Upgrades:notTag:consoleUpgrade
+			hide :Upgrades:owned
 			anim glow
 		end
 		tooltip origin:bottom
@@ -202,6 +204,7 @@ Buttons
 		on click:
 			show tag:workplaceUpgrade
 			hide :Upgrades:notTag:workplaceUpgrade
+			hide :Upgrades:owned
 			anim glow
 		end
 		tooltip origin:bottom
@@ -213,6 +216,7 @@ Buttons
 		on click:
 			show tag:generationUpgrade
 			hide :Upgrades:notTag:generationUpgrade
+			hide :Upgrades:owned
 			anim glow
 		end
 		tooltip origin:bottom
@@ -224,6 +228,7 @@ Buttons
 		on click:
 			show tag:specialtyUpgrade
 			hide :Upgrades:notTag:specialtyUpgrade
+			hide :Upgrades:owned
 			anim glow
 		end
 		tooltip origin:bottom
@@ -597,7 +602,7 @@ Upgrades
 
 	*criticalClick
 		name:Critical Click
-		desc:Get BETTER at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
+		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
 		passive:grant 1 critBonus
 		tag:specialtyUpgrade
