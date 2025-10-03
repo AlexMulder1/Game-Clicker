@@ -238,8 +238,8 @@ Buttons
 		desc:Click this to see equippable mods.
 		tag:upgradeSwitcher
 		on click:
-			show tag:mod
-			hide :Upgrades:notTag:mode
+			show tag:mods
+			hide :Upgrades:notTag:mods
 			anim glow
 		end
 		tooltip origin:bottom
@@ -679,7 +679,7 @@ Upgrades
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
 		passive:multiply money yield of tag:controllerButton by 1.5
-		tag:mod
+		tag:mods
 		req:modUpgrade
 
 	*superCooling
@@ -687,7 +687,7 @@ Upgrades
 		desc:Install a new A/C that makes the room really chilly!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
 		passive:multiply money yield of tag:console by 1.5
-		tag:mod
+		tag:mods
 		req:modUpgrade
  
 //Super Secret Upgrade!!!
