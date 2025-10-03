@@ -232,6 +232,17 @@ Buttons
 			anim glow
 		end
 		tooltip origin:bottom
+
+	*modButton
+		name:Mods
+		desc:Click this to see equippable mods.
+		on click:
+			show tag:mod
+			hide :Upgrades:notTag:mode
+			anim glow
+		end
+		tooltip origin:bottom
+		req:modUpgrade
  
  
 Resources
@@ -244,12 +255,22 @@ Resources
 		tag:money
 
 	*bugRemnant
-		name:Bug Remnant
+		name:Bug Remnant|Bug Remnants
 		desc:This is a bug remnant, which you collect from fixing the bugs that pop up occasionally. You can use these to purchase special upgrades that have all kinds of special effects.
 		icon class:shadowed
 		
 
 //Fake Resources
+
+	*mod
+		name:Mods in Use
+		desc:The amount of mods you are currently using. Equip more than the amount of mod slots you have to unequip all mods.
+		always hidden
+
+	*modSlot
+		name:Mod Slots
+		desc:The max number of mods you can equip.
+		always hidden
 
 	*critBonus
 		name:Critical Click Bonus
@@ -294,7 +315,7 @@ Resources
 		hidden when 0
  
 	*antivirusFragment
-		name:Antivirus Fragment
+		name:Antivirus Fragment|Antivirus Fragments
 		desc:This is the amount of fragments you've received for an antivirus. You can collect more by clicking on viruses.
 		icon class:shadowed
 		hidden when 0
@@ -331,6 +352,7 @@ Buildings
 			yield 0.1 tutorialBuildingpr
 		end
 		limit:10
+		tag:console
 		unlocked
  
 	*console1
@@ -343,6 +365,7 @@ Buildings
 		end
 		cost increase:105%
 		icon:https://i.postimg.cc/28ww2L86/console1.png
+		tag:console
 		req:generationUp1
  
 	*portableConsole1
@@ -355,6 +378,7 @@ Buildings
 		end
 		cost increase:104%
 		icon:https://i.postimg.cc/MpKQjp9S/pixil-frame-0-1.png
+		tag:console
 		req:consoleUnlock
  
 	*pc1
@@ -367,6 +391,7 @@ Buildings
 		end
 		cost increase:106%
 		icon:https://i.postimg.cc/zGFY4JNV/pixil-frame-0-3.png
+		tag:console
 		req:pcUnlock
  
 Upgrades
@@ -623,6 +648,46 @@ Upgrades
 		cost:100 bugRemnant
 		tag:specialtyUpgrade
 		req:criticalClick2
+
+	*modUpgrade
+		name:Mod-Kit
+		desc:Create a mod-kit with your blood, sweat, and tears.<//><b>Effect:</b><.>Unlock and be able to equip <b>mods</b>.
+		cost:25 bugRemnant
+		passive:grant 1 modSlot
+		tag:specialtyUpgrade
+		req:sloppyCode
+
+	*modUpgrade2
+		name:Better Mod-Kit
+		desc:Enhance the mod-kit with better wiring.<//><b>Effect:</b><.>Mods are <b>50%</b> more efficient.<//>CURRENTLY NON-OPERATIONAL
+		cost:50 bugRemnant
+		tag:specialtyUpgrade
+		req:modUpgrade
+
+	*modUpgrade3
+		name:Bigger Mod-Kit
+		desc:Enhace the mod-kit by making the motherboard larger.<//><b>Effect:</b><.>You now have <b>2</b> mod slots. Also, there are now new mods to use.
+		cost:100 bugRemnant
+		passive:grant 1 modSlot
+		tag:specialtyUpgrade
+		req:modUpgrade2
+//Mods
+
+	*superClicker
+		name:Super Clicker
+		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
+		cost:0 money
+		passive:multiply money yield of tag:controllerButton by 1.5
+		tag:mod
+		req:modUpgrade
+
+	*superCooling
+		name:Super Cooling
+		desc:Install a new A/C that makes the room really chilly!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
+		cost:0 money
+		passive:multiply money yield of tag:console by 1.5
+		tag:mod
+		req:modUpgrade
  
 //Super Secret Upgrade!!!
 	*secretUpgrade
