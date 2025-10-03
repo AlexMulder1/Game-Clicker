@@ -157,7 +157,7 @@ Buttons
 			yield 32 money
 			yield 1 controllerClick
 			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 32 money
+			if (have criticalClick and chance($critRate%)) yield 999 money
 			anim icon wobble
 		end
 		class:bigButton hasFlares
