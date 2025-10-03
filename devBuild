@@ -781,6 +781,7 @@ Shinies
 		movement:anywhere fade growShrink spinRandom
 		frequency:10
 		frequency variation:10
+		duration:5
 		icon:https://i.postimg.cc/vTQRf7v8/pixil-frame-0-2.png
 		class:bigButton
 		on click:
