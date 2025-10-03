@@ -236,6 +236,7 @@ Buttons
 	*modButton
 		name:Mods
 		desc:Click this to see equippable mods.
+		tag:upgradeSwitcher
 		on click:
 			show tag:mod
 			hide :Upgrades:notTag:mode
