@@ -599,7 +599,7 @@ Upgrades
 
 	*criticalClick2
 		name:Super Critical Click
-		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Getting a critical click gives you <b>3x</b> the amount of money.
+		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>20%</b> chance of clicking the controller twice.
 		cost:50 bugRemnant
 		passive:yield 10 critRate
 		tag:specialtyUpgrade
