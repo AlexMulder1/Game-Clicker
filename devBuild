@@ -53,8 +53,9 @@ Buttons
 		on click:
 			yield 1 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 1 money
+			$critBonus=1*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
@@ -88,8 +89,9 @@ Buttons
 		on click:
 			yield 2 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 2 money
+			$critBonus=2*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -105,8 +107,9 @@ Buttons
 		on click:
 			yield 4 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 4 money
+			$critBonus=4*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -122,8 +125,9 @@ Buttons
 		on click:
 			yield 8 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 8 money
+			$critBonus=8*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -139,8 +143,9 @@ Buttons
 		on click:
 			yield 16 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 16 money
+			$critBonus=16*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -156,8 +161,9 @@ Buttons
 		on click:
 			yield 32 money
 			yield 1 controllerClick
-			$critRate=critRate
-			if (have criticalClick and chance($critRate%)) yield 999 money
+			$critBonus=32*critBonus
+			if (have criticalClick and chance(10%)) yield $critBonus money
+			if (have criticalClick3 and chance(1%)) yield 1 bugRemnant
 			anim icon wobble
 		end
 		class:bigButton hasFlares
@@ -240,8 +246,8 @@ Resources
 
 //Fake Resources
 
-	*critRate
-		name:Critical Click Rate
+	*critBonus
+		name:Critical Click Bonus
 		desc:stupid thing used for stupid mechanic
 		always hidden
 
@@ -593,21 +599,21 @@ Upgrades
 		name:Critical Click
 		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>10%</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
-		on earn:yield 10 critRate
+		on earn:yield 1 critBonus
 		tag:specialtyUpgrade
 		req:sloppyCode
 
 	*criticalClick2
 		name:Super Critical Click
-		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>20%</b> chance of clicking the controller twice.
+		desc:Figure out a more efficient method of pressing the buttons on your very controller. <//><b>Effect:</b><.>When getting a critical click, you now earn <b>3x</b> the amount of money.
 		cost:50 bugRemnant
-		passive:yield 10 critRate
+		passive:yield 1 critBonus
 		tag:specialtyUpgrade
 		req:criticalClick
 
 	*criticalClick3
-		name:Mega Critical Click
-		desc:Figure out a way to make the buttons on your very controller explode. <//><b>Effect:</b><.>Getting a critical click gives you <b>3x</b> the amount of money.
+		name:Buggy Critical Click
+		desc:Figure out a way to make the buttons on your very controller explode. <//><b>Effect:</b><.>There is a <b>1%</b> chance to get a bug remnant every time the controller is clicked.
 		cost:100 bugRemnant
 		tag:specialtyUpgrade
 		req:criticalClick2
