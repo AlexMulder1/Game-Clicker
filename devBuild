@@ -51,15 +51,12 @@ Buttons
 		name:Do some gaming!
 		desc:Click this to play video-games and earn money!
 		on click:
+			$critRate=10
+			if (have criticalClick2)
+				$critRate=25
 			yield 1 money
 			yield 1 controllerClick
-			if (have criticalClick3)
-				if (chance(1%)) yield 2 money
-				elseif (chance(24%))yield 1 money
-			elseif (have criticalClick2)
-				if (chance(25%)) yield 1 money
-			elseif (have criticalClick1)
-				if (chance(10%)) yield 1 money
+			if (have criticalClick and chance([$critRate]%)) yield 1 money
 			anim icon wobble
 			if (money=1 and tutorialStep=0)
 				toast Welcome to Game Clicker. You'll find the many upgrades & thingamabobs to be confusing at first, but I'll guide you through it. First, get yourself some more money by clicking the controller to afford the arcade machine. Speaking of which, clicking the controller enough times grants controller upgrades.
