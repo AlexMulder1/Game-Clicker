@@ -560,7 +560,7 @@ Upgrades
 		desc:Get better at pressing the buttons on your very controller. <//><b>Effect:</b><.>Gives you a <b>1/10</b> chance of clicking the controller twice.
 		cost:25 bugRemnant
 		tag:specialtyUpgrade
-		req:10 bugRemnant
+		req:sloppyCode
  
 //Super Secret Upgrade!!!
 	*secretUpgrade
