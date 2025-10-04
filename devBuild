@@ -290,6 +290,11 @@ Resources
 		end
 		always hidden
 
+	*timerMult
+		name:Timer Multiplier
+		desc:Timer multiplier for assorted things.
+		always hidden
+
 	*kentuckyPass
 		name:Kentucky Pass
 		desc:random ahh thing
