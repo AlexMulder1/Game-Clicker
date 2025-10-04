@@ -759,7 +759,24 @@ Upgrades
 			end
 		end
 		tag:mods
+		req:modUpgrade3
+
+	*bp3000
+		name:Button Presser 3000
+		desc:Get a new gadget that automatically presses the controller for you!<//><b>Effect:</b><.>Gives you <b>100</b> money per second. <i>(Note, this has a high likelihood of being readjusted.)</i>
+		cost:0 money
+		passive:increase money yield of mps by 100
+		on earn:
+			yield 1 mod
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose bp3000
+				lose 1 mod
+			end
+		end
+		tag:mods
 		req:modUpgrade
+//for the rework, make the controller upgrades all grant a multiplier to a console that exists purely for this mod. (if this does get readjusted the clicks are getting nerfed down to 10 or even 5.)
 
 	*lunchBreak
 		name:Work-Mandated Lunch Break
