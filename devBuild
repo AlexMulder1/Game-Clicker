@@ -665,7 +665,7 @@ Upgrades
 
 	*modUpgrade2
 		name:Better Mod-Kit
-		desc:Enhance the mod-kit with better wiring.<//><b>Effect:</b><.>Mods are <b>50%</b> more efficient.<//>CURRENTLY NON-OPERATIONAL
+		desc:ENHANCE the mod-kit with better wiring.<//><b>Effect:</b><.>Mods are <b>50%</b> more efficient.<//>CURRENTLY NON-OPERATIONAL
 		cost:50 bugRemnant
 		tag:specialtyUpgrade
 		req:modUpgrade
