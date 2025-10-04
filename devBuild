@@ -704,8 +704,7 @@ Upgrades
 		name:Super Clicker
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
-		passive:
-			multiply money yield of tag:controllerButton by (1.5*modMult)
+		passive:multiply money yield of tag:controllerButton by (1.5*modMult)
 		on earn:
 			yield 1 mod
 			$modsUsed=modSlot-mod
