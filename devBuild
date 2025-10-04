@@ -602,7 +602,7 @@ Upgrades
 		name:Alexandrox Gaming System Tier 3: Console Paint
 		desc:Paint the Alexandrox Gaming System with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>2x</b> as much money!
 		cost:500000 money
-		passive:multiply yield of console 1 by (4/3)
+		passive:multiply yield of console1 by (4/3)
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
 		req:agsUpgrade2
