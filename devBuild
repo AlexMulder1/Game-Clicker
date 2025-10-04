@@ -553,7 +553,7 @@ Upgrades
 		req:1 antivirusFragment
  
 //Console Upgrades
-	*color
+	*gdUpgrade1
 		name:Color Enhancement
 		desc:Add color to the amazing Game Dude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes 1 money every 2 seconds!
 		cost:30000 money
@@ -562,7 +562,7 @@ Upgrades
 		tag:consoleUpgrade
 		req:60 portableConsole1
  
-	*paintIt
+	*agsUpgrade1
 		name:Paint the Console!
 		desc:Paint the AGS with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes 2x as much money!
 		cost:70000 money
@@ -571,7 +571,7 @@ Upgrades
 		tag:consoleUpgrade
 		req:50 console1
  
-	*newGPU
+	*ppcUpgrade1
 		name:New GPU
 		desc:Get a new, more colorful Graphics Processing Unit for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes 2x as much money!
 		cost:100000 money
