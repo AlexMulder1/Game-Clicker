@@ -290,16 +290,19 @@ Resources
 				end
 			end
 		end
+		always hidden
 		
 
 	*timerMult
 		name:Timer Multiplier
 		desc:Timer multiplier for assorted things.
+		always hidden
 		
 
 	*kentuckyPass
 		name:Kentucky Pass
 		desc:random ahh thing
+		always hidden
 		
 
 	*critBonus
@@ -756,7 +759,7 @@ Upgrades
 			end
 		end
 		tag:mods
-		req:modUpgrade3
+		req:modUpgrade
 
 	*lunchBreak
 		name:Work-Mandated Lunch Break
@@ -776,7 +779,7 @@ Upgrades
 		end
 		on lose:lose 1 timerMult
 		tag:mods
-		req:modUpgrade
+		req:modUpgrade3
 
 	*uninstallMods
 		name:Uninstall Mods
@@ -1087,13 +1090,18 @@ Shinies
 
 	*lunch
 		movement:anywhere wiggle growShrink fade
-		frequency:10
+		frequency:3600
 		icon:https://i.postimg.cc/0jrr2Q0g/Mac.png
 		class:bigButton
 		req:lunchBreak
 		on click:
-			yield 300 timer
-			yield 1 kentuckyPass
+			if (have lunchBreak)
+				yield 300 timer
+				yield 1 kentuckyPass
+				toast You ate lunch and are feeling <i>FIRED UP</i>! You now have <b>2x</b> production for <b>5</b> minutes.
+			else
+				toast Nothing happened...
+			end
 		end
  
 //1.0 Changelog: FULL RELEASE BABY!!!! this game was like multiple months in the making, so enjoy!
