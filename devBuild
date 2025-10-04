@@ -286,7 +286,9 @@ Resources
 			elseif (have 1 kentuckyPass and 0 timer)
 				lose 1 kentuckyPass
 				lose 1 timerMult
-				
+			end
+		end
+		always hidden
 
 	*kentuckyPass
 		name:Kentucky Pass
