@@ -282,9 +282,9 @@ Resources
 			if (kentuckyPass=1)
 				if (timerMult=2)
 					lose 1 timer
-				elseif (timerMult=1)
+				else if (timerMult=1)
 					yield 1 timerMult
-				elseif (timer=0)
+				else if (timer=0)
 					lose 1 kentuckyPass
 					lose 1 timerMult
 				end
