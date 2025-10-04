@@ -271,6 +271,28 @@ Resources
 		name:Mod Slots
 		desc:The max number of mods you can equip.	
 
+	*modMult
+		name:Mod Multiplier
+		desc:How much the effect of a mod gets multiplied by.
+
+	*timer
+		name:Timer
+		desc:Timer for assorted things.
+		on tick:
+			if (have 1 kentuckyPass and 2 timerMult)
+				lose 1 timer
+			elseif (have 1 kentuckyPass and 1 timerMult)
+				yield 1 timerMult
+			elseif (have 1 kentuckyPass and 0 timer)
+				lose 1 kentuckyPass
+				lose 1 timerMult
+				
+
+	*kentuckyPass
+		name:Kentucky Pass
+		desc:random ahh thing
+		always hidden
+
 	*critBonus
 		name:Critical Click Bonus
 		desc:stupid thing used for stupid mechanic
@@ -652,7 +674,10 @@ Upgrades
 		name:Mod-Kit
 		desc:Create a mod-kit with your blood, sweat, and tears.<//><b>Effect:</b><.>Unlock and be able to equip <b>mods</b>.
 		cost:25 bugRemnant
-		passive:grant 1 modSlot
+		passive:
+			grant 1 modSlot
+			grant 1 modMult
+		end
 		tag:specialtyUpgrade
 		req:sloppyCode
 
@@ -660,6 +685,7 @@ Upgrades
 		name:Better Mod-Kit
 		desc:Enhance the mod-kit with better wiring.<//><b>Effect:</b><.>Mods are <b>50%</b> more efficient.<//>CURRENTLY NON-OPERATIONAL
 		cost:50 bugRemnant
+		passive:grant 0.5 modMult
 		tag:specialtyUpgrade
 		req:modUpgrade
 
@@ -676,7 +702,8 @@ Upgrades
 		name:Super Clicker
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
-		passive:multiply money yield of tag:controllerButton by 1.5
+		passive:
+			multiply money yield of tag:controllerButton by (1.5*modMult)
 		on earn:
 			yield 1 mod
 			$modsUsed=modSlot-mod
@@ -692,7 +719,7 @@ Upgrades
 		name:Super Cooling
 		desc:Install a new A/C that makes the room really chilly!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from consoles.
 		cost:0 money
-		passive:multiply money yield of tag:console by 1.5
+		passive:multiply tag:money yield of tag:console by (1.5*modMult)
 		on earn:
 			yield 1 mod
 			$modsUsed=modSlot-mod
@@ -703,6 +730,44 @@ Upgrades
 		end
 		tag:mods
 		req:modUpgrade
+
+	*companyDiscount
+		name:Company Discount
+		desc:Get a special <i>worker's discount</i> on anything and everything purchasable!<//><b>Effect:</b><.>Everything in the game costs <b>10%</b> less.
+		cost:0 money
+		passive:
+			multiply cost of tag:console by 0.85
+			multiply cost of :Upgrades by 0.85
+		end
+		on earn:
+			yield 1 mod
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose companyDiscount
+				lose 1 mod
+			end
+		end
+		tag:mods
+		req:modUpgrade3
+
+	*lunchBreak
+		name:Work-Mandated Lunch Break
+		desc:Have a lunch break and get fired up in the process.<//><b>Effect:</b><.>Fried chicken will occasionally spawn, granting <b>2x</b> production for <b>5</b> minutes.
+		cost:0 money
+		passive:
+			grant 1 timerMult
+			multiply yield of tag:money by timerMult
+		end
+		on earn:
+			yield 1 mod
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose companyDiscount
+				lose 1 mod
+			end
+		end
+		tag:mods
+		req:modUpgrade3
 
 	*uninstallMods
 		name:Uninstall Mods
@@ -956,6 +1021,7 @@ Shinies
 		movement:anywhere fade growShrink spinRandom
 		frequency:60
 		frequency variation:10
+		duration:5
 		icon:https://i.postimg.cc/d0T7Kc3H/game-Virus.png
 		class:bigButton
 		req:generationUp1
@@ -1008,6 +1074,17 @@ Shinies
 				$zaClicks=macClick
 				toast You've clicked me [$zaClicks] times!
 			end
+		end
+
+	*lunch
+		movement:anywhere wiggle growShrink Fade
+		frequency:10
+		icon:https://i.postimg.cc/0jrr2Q0g/Mac.png
+		class:bigButton
+		req:lunchBreak
+		on click:
+			yield 300 timer
+			yield 1 kentuckyPass
 		end
  
 //1.0 Changelog: FULL RELEASE BABY!!!! this game was like multiple months in the making, so enjoy!
