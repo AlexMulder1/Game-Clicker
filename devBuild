@@ -271,6 +271,14 @@ Resources
 	*modSlot
 		name:Mod Slots
 		desc:The max number of mods you can equip.
+		on tick:
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose :Upgrade:tag:mods
+				mod is 0
+			end
+		end
+			
 		
 
 	*critBonus
@@ -678,15 +686,8 @@ Upgrades
 		name:Super Clicker
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
-		passive:
-			multiply money yield of tag:controllerButton by 1.5
-			grant 1 mod
-		end
-		on earn:
-			if (mod>modSlot)
-				lose superClicker
-			end
-		end
+		passive:multiply money yield of tag:controllerButton by 1.5
+		on earn:yield 1 mod
 		tag:mods
 		req:modUpgrade
 
@@ -694,15 +695,8 @@ Upgrades
 		name:Super Cooling
 		desc:Install a new A/C that makes the room really chilly!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from consoles.
 		cost:0 money
-		passive:
-			multiply money yield of tag:console by 1.5
-			grant 1 mod
-		end
-		on earn:
-			if (mod>modSlot)
-				lose superCooling
-			end
-		end
+		passive:multiply money yield of tag:console by 1.5
+		on earn:yield 1 mod
 		tag:mods
 		req:modUpgrade
 
@@ -710,7 +704,10 @@ Upgrades
 		name:Uninstall Mods
 		desc:Remove the mods that are currently active and start from scratch.
 		cost:0 money
-		on earn:lose :Upgrades:tag:mods
+		on earn:
+			lose :Upgrades:tag:mods
+			mod is 0
+		end
 		tag:mods
 		req:modUpgrade
  
