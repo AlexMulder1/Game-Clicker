@@ -22,8 +22,8 @@ Upcoming Updates (√ means they've been added/patched in the dev build & are co
 - Respriting of miscolored or non-pixel-perfect sprites. (e.g. the first controller sprite & the Potato PC sprite.)
 - Significantly expanding the game to push the price "cap" to 1 million & adding a ton of new content to fit the new playtime. (i.e. expansions to pre-existing upgrades, revamps to workplace upgrades, and adding a new upgrade category)
 - Giving the workplace upgrades a major rework and giving the console upgrades a minor rework.
-- Changing how new consoles are collected to accomodate the new currency.
-- Adding a new currency with a host of new upgrades to shake up the gameplay significantly.
+- Changing how new consoles are collected to introduce a new feature a bit into the game. (Unlocking game dude and potato pc by getting to 10k money and getting them for free.)
+- Adding a new currency with a host of new upgrades to shake up the gameplay significantly. [1/2] (this is not fully finished as of now; i need to add the rest of the mods and add functionality to the second mod upgrade.)
 - Adding a boss to cap off Generation 1.
 - Adding a whole new minigame section of the game which can be triggered via "Minigames" in the upgrade shop. The first minigame will be Bug Buster, where a lot of bugs appear on screen for 30 seconds. The cooldown will be 10 minutes.
 - Finishing the sprites for everything that's unsprited. (THIS COMES LAST.)
