@@ -266,20 +266,10 @@ Resources
 	*mod
 		name:Mods in Use
 		desc:The amount of mods you are currently using. Equip more than the amount of mod slots you have to unequip all mods.
-		
 
 	*modSlot
 		name:Mod Slots
-		desc:The max number of mods you can equip.
-		on tick:
-			$modsUsed=modSlot-mod
-			if ($modsUsed<0)
-				lose :Upgrades:tag:mods
-				mod is 0
-			end
-		end
-			
-		
+		desc:The max number of mods you can equip.	
 
 	*critBonus
 		name:Critical Click Bonus
@@ -660,9 +650,16 @@ Upgrades
 
 	*modUpgrade
 		name:Mod-Kit
-		desc:Create a mod-kit with your blood, sweat, and tears.<//><b>Effect:</b><.>Unlock and be able to equip <b>mods</b>.
+		desc:CREATE a mod-kit with your blood, sweat, and tears.<//><b>Effect:</b><.>Unlock and be able to equip <b>mods</b>.
 		cost:25 bugRemnant
 		passive:grant 1 modSlot
+		on tick:
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose :Upgrades:tag:mods
+				mod is 0
+			end
+		end
 		tag:specialtyUpgrade
 		req:sloppyCode
 
