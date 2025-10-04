@@ -681,7 +681,7 @@ Upgrades
 		passive:multiply money yield of tag:controllerButton by 1.5
 		on earn:
 			if (mod>modSlot)
-				lose :Upgrades:superClicker
+				lose superClicker
 			end
 		end
 		tag:mods
@@ -694,7 +694,7 @@ Upgrades
 		passive:multiply money yield of tag:console by 1.5
 		on earn:
 			if (mod>modSlot)
-				lose :Upgrades:superCooling
+				lose superCooling
 			end
 		end
 		tag:mods
