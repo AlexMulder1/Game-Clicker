@@ -274,7 +274,7 @@ Resources
 		on tick:
 			$modsUsed=modSlot-mod
 			if ($modsUsed<0)
-				lose :Upgrade:tag:mods
+				lose :Upgrades:tag:mods
 				mod is 0
 			end
 		end
