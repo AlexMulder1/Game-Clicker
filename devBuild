@@ -708,8 +708,10 @@ Upgrades
 		passive:grant 1 modSlot
 		tag:specialtyUpgrade
 		req:modUpgrade2
-//Mods
 
+//the upgrade tree is highly likely to be getting 2 more tiers very close as part of a future update.
+
+//Mods
 	*superClicker
 		name:Super Clicker
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
@@ -775,7 +777,7 @@ Upgrades
 			end
 		end
 		tag:mods
-		req:modUpgrade
+		req:modUpgrade3
 //for the rework, make the controller upgrades all grant a multiplier to a console that exists purely for this mod. (if this does get readjusted the clicks are getting nerfed down to 10 or even 5.)
 
 	*lunchBreak
