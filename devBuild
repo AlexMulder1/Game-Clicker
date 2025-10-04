@@ -406,13 +406,13 @@ Buildings
 		desc:Dude, you better game! <//><b>Effects:</b><.>Produces <b>[(portableConsole1pr:ps/portableConsole1)]</b> money per second.<.>Combined, they all produce <b>[portableConsole1pr:ps]</b> money per second.
 		cost:50 money
 		on tick:
-			yield 0.2 money
-			yield 0.2 portableConsole1pr
+			yield 0.25 money
+			yield 0.25 portableConsole1pr
 		end
 		cost increase:104%
 		icon:https://i.postimg.cc/MpKQjp9S/pixil-frame-0-1.png
 		tag:console
-		req:consoleUnlock
+		req:10 console1
  
 	*pc1
 		name:Potato PC | PPC
@@ -425,7 +425,7 @@ Buildings
 		cost increase:106%
 		icon:https://i.postimg.cc/zGFY4JNV/pixil-frame-0-3.png
 		tag:console
-		req:pcUnlock
+		req:10 console1
  
 Upgrades
 
@@ -554,31 +554,87 @@ Upgrades
  
 //Console Upgrades
 	*gdUpgrade1
-		name:Color Enhancement
-		desc:Add color to the amazing Game Dude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes 1 money every 2 seconds!
-		cost:30000 money
-		passive:multiply yield of portableConsole1 by 2.5
+		name:Game Dude Tier 1
+		desc:Polish the Game Dude.<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>1.2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of portableConsole1 by 1.2
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
-		req:60 portableConsole1
+		req:75 portableConsole1
+
+	*gdUpgrade2
+		name:Game Dude Tier 2
+		desc:Polish the Game Dude a little more.<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>1.5x</b> as much money!
+		cost:100000 money
+		passive:multiply yield of portableConsole1 by 1.25
+		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
+		tag:consoleUpgrade
+		req:gdUpgrade1
+
+	*gdUpgrade3
+		name:Game Dude Tier 3: Color Enhancement
+		desc:Add color to the amazing GameDude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>2x</b> as much money!
+		cost:500000 money
+		passive:multiply yield of portableConsole1 by (4/3)
+		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
+		tag:consoleUpgrade
+		req:gdUpgrade2
  
 	*agsUpgrade1
-		name:Paint the Console!
-		desc:Paint the AGS with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes 2x as much money!
-		cost:70000 money
-		passive:multiply yield of console1 by 2
+		name:Alexandrox Gaming System Tier 1
+		desc:Polish the Alexandrox Gaming System.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>1.2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of console1 by 1.2
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
 		req:50 console1
- 
-	*ppcUpgrade1
-		name:New GPU
-		desc:Get a new, more colorful Graphics Processing Unit for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes 2x as much money!
+
+	*agsUpgrade2
+		name:Alexandrox Gaming System Tier 2
+		desc:Polish up the Alexandrox Gaming System a little more.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>1.5x</b> as much money!
 		cost:100000 money
-		passive:multiply yield of pc1 by 2
+		passive:multiply yield of console1 by 1.25
+		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
+		tag:consoleUpgrade
+		req:agsUpgrade1
+
+	*agsUpgrade3
+		name:Alexandrox Gaming System Tier 3: Console Paint
+		desc:Paint the Alexandrox Gaming System with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>2x</b> as much money!
+		cost:500000 money
+		passive:multiply yield of console 1 by (4/3)
+		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
+		tag:consoleUpgrade
+		req:agsUpgrade2
+
+	*ppcUpgrade1
+		name:Potato PC Tier 1
+		desc:Polish the Potato PC.<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>1.2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of pc1 by 1.2
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
-		req:40 pc1
+		req:30 pc1
+
+	*ppcUpgrade2
+		name:Potato PC Tier 2
+		desc:Polish up the Potato PC a little more.<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>1.5x</b> as much money!
+		cost:100000 money
+		passive:multiply yield of pc1 by 1.25
+		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
+		tag:consoleUpgrade
+		req:ppcUpgrade1
+
+	*ppcUpgrade3
+		name:Potato PC Tier 3: GPU Upgrade
+		desc:Get a new, more colorful GPU for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>2x</b> as much money!
+		cost:500000 money
+		passive:multiply yield of pc1 by (4/3)
+		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
+		tag:consoleUpgrade
+		req:ppcUpgrade2
+
+//should make an ultimate union upgrade that multiplies this all by another 2x.
  
 //Workplace Upgrades
 	*newChair
@@ -983,8 +1039,8 @@ Achievements
 		name:All Rounder
 		desc:Invent all three console types! You're one creative person, I must say!
 		icon:https://i.postimg.cc/FKf9nZDr/all-Rounder-Trophy.png
-		req:consoleUnlock
-		req:pcUnlock
+		req:1 pc1
+		req:1 portableConsole1
  
 	*gen1CUTrophy
 		name:Color Splash
