@@ -774,7 +774,7 @@ Upgrades
 				lose 1 mod
 			end
 		end
-		on lose: lose 1 timerMult
+		on lose:lose 1 timerMult
 		tag:mods
 		req:modUpgrade
 
