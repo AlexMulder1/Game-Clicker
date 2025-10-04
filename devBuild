@@ -763,17 +763,18 @@ Upgrades
 		desc:Have a lunch break and get fired up in the process.<//><b>Effect:</b><.>Fried chicken will occasionally spawn, granting <b>2x</b> production for <b>5</b> minutes.
 		cost:0 money
 		passive:
-			grant 1 timerMult
 			multiply yield of tag:money by timerMult
 		end
 		on earn:
 			yield 1 mod
+			yield 1 timerMult
 			$modsUsed=modSlot-mod
 			if ($modsUsed<0)
 				lose lunchBreak
 				lose 1 mod
 			end
 		end
+		on lose: lose 1 timerMult
 		tag:mods
 		req:modUpgrade
 
