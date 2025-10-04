@@ -279,13 +279,15 @@ Resources
 		name:Timer
 		desc:Timer for assorted things.
 		on tick:
-			if (have 1 kentuckyPass and have 2 timerMult)
-				lose 1 timer
-			elseif (have 1 kentuckyPass and have 1 timerMult)
-				yield 1 timerMult
-			elseif (have 1 kentuckyPass and have 0 timer)
-				lose 1 kentuckyPass
-				lose 1 timerMult
+			if (have 1 kentuckyPass)
+				if (have 2 timerMult)
+					lose 1 timer
+				elseif (have 1 timerMult)
+					yield 1 timerMult
+				elseif (have 0 timer)
+					lose 1 kentuckyPass
+					lose 1 timerMult
+				end
 			end
 		end
 		always hidden
