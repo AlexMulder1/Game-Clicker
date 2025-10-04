@@ -990,9 +990,9 @@ Achievements
 		name:Color Splash
 		desc:Upgrade all consoles in Generation 1! Wow, all this color really makes the games immersive!
 		icon:https://i.postimg.cc/T1xf1XG1/console-Upgrade-Trophy1.png
-		req:color
-		req:paintIt
-		req:newGPU
+		req:gdUpgrade1
+		req:agsUpgrade1
+		req:ppcUpgrade1
  
 	*workplaceTrophy1
 		name:Living Life
