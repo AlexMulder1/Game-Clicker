@@ -681,7 +681,7 @@ Upgrades
 			yield 1 mod
 			$modsUsed=modSlot-mod
 			if ($modsUsed<0)
-				lose :Upgrades:superClicker
+				lose superClicker
 				lose 1 mod
 			end
 		end
@@ -697,7 +697,7 @@ Upgrades
 			yield 1 mod
 			$modsUsed=modSlot-mod
 			if ($modsUsed<0)
-				lose :Upgrades:superCooling
+				lose superCooling
 				lose 1 mod
 			end
 		end
