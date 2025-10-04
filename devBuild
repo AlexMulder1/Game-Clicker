@@ -653,13 +653,6 @@ Upgrades
 		desc:CREATE a mod-kit with your blood, sweat, and tears.<//><b>Effect:</b><.>Unlock and be able to equip <b>mods</b>.
 		cost:25 bugRemnant
 		passive:grant 1 modSlot
-		on tick:
-			$modsUsed=modSlot-mod
-			if ($modsUsed<0)
-				lose :Upgrades:tag:mods
-				mod is 0
-			end
-		end
 		tag:specialtyUpgrade
 		req:sloppyCode
 
@@ -684,7 +677,14 @@ Upgrades
 		desc:Use a fancy glove that makes your finger click faster!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from controller clicks.
 		cost:0 money
 		passive:multiply money yield of tag:controllerButton by 1.5
-		on earn:yield 1 mod
+		on earn:
+			yield 1 mod
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose :Upgrades:superClicker
+				lose 1 mod
+			end
+		end
 		tag:mods
 		req:modUpgrade
 
@@ -693,7 +693,14 @@ Upgrades
 		desc:Install a new A/C that makes the room really chilly!<//><b>Effect:</b><.>You earn <b>1.5x</b> money from consoles.
 		cost:0 money
 		passive:multiply money yield of tag:console by 1.5
-		on earn:yield 1 mod
+		on earn:
+			yield 1 mod
+			$modsUsed=modSlot-mod
+			if ($modsUsed<0)
+				lose :Upgrades:superCooling
+				lose 1 mod
+			end
+		end
 		tag:mods
 		req:modUpgrade
 
