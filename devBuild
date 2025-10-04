@@ -266,12 +266,12 @@ Resources
 	*mod
 		name:Mods in Use
 		desc:The amount of mods you are currently using. Equip more than the amount of mod slots you have to unequip all mods.
-		always hidden
+		
 
 	*modSlot
 		name:Mod Slots
 		desc:The max number of mods you can equip.
-		always hidden
+		
 
 	*critBonus
 		name:Critical Click Bonus
