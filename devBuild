@@ -775,7 +775,7 @@ Upgrades
 			end
 		end
 		tag:mods
-		req:modUpgrade3
+		req:modUpgrade
 
 	*uninstallMods
 		name:Uninstall Mods
