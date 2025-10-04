@@ -1085,7 +1085,7 @@ Shinies
 		end
 
 	*lunch
-		movement:anywhere wiggle growShrink Fade
+		movement:anywhere wiggle growShrink fade
 		frequency:10
 		icon:https://i.postimg.cc/0jrr2Q0g/Mac.png
 		class:bigButton
