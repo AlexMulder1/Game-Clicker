@@ -290,17 +290,17 @@ Resources
 				end
 			end
 		end
-		always hidden
+		
 
 	*timerMult
 		name:Timer Multiplier
 		desc:Timer multiplier for assorted things.
-		always hidden
+		
 
 	*kentuckyPass
 		name:Kentucky Pass
 		desc:random ahh thing
-		always hidden
+		
 
 	*critBonus
 		name:Critical Click Bonus
@@ -770,7 +770,7 @@ Upgrades
 			yield 1 mod
 			$modsUsed=modSlot-mod
 			if ($modsUsed<0)
-				lose companyDiscount
+				lose lunchBreak
 				lose 1 mod
 			end
 		end
