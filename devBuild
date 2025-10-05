@@ -568,12 +568,12 @@ Upgrades
 	*controller2
 		name:Controller Level 2
 		desc:Give the controller not 1, not 2, not 3, but 4 controller buttons!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 4.
-		cost:300 controllerClick
+		cost:250 controllerClick
 		passive:
 			hide controllerButton1
 			show controllerButton2
 		end
-		on earn:yield 300 controllerClick
+		on earn:yield 250 controllerClick
 		icon:https://i.postimg.cc/t4Hv7Gv0/controller-Upgrade2.png
 		tag:controllerUpgrade
 		req:controller1
@@ -581,12 +581,12 @@ Upgrades
 	*controller3
 		name:Controller Level 3
 		desc:Give your controller handles!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 8.
-		cost:750 controllerClick
+		cost:400 controllerClick
 		passive:
 			hide controllerButton2
 			show controllerButton3
 		end
-		on earn:yield 750 controllerClick
+		on earn:yield 400 controllerClick
 		icon:https://i.postimg.cc/1tVtNB4x/pixil-frame-0-18.png
 		tag:controllerUpgrade
 		req:controller2
@@ -594,12 +594,12 @@ Upgrades
 	*controller4
 		name:Controller Level 4
 		desc:Make your controller 3D!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 16.
-		cost:1500 controllerClick
+		cost:750 controllerClick
 		passive:
 			hide controllerButton3
 			show controllerButton4
 		end
-		on earn:yield 1500 controllerClick
+		on earn:yield 750 controllerClick
 		icon:https://i.postimg.cc/4NyBrhKK/pixil-frame-0-20.png
 		tag:controllerUpgrade
 		req:controller3
@@ -607,12 +607,12 @@ Upgrades
 	*controller5
 		name:Controller Level 5
 		desc:Make the buttons colorful!<//><b>Effect:</b><.>Multiplies money earned via <i>controller</i> by 32.
-		cost:2500 controllerClick
+		cost:1200 controllerClick
 		passive:
 			hide controllerButton4
 			show controllerButton5
 		end
-		on earn:yield 2500 controllerClick
+		on earn:yield 1200 controllerClick
 		icon:https://i.postimg.cc/vH4tPFjf/pixil-frame-0-22.png
 		tag:controllerUpgrade
 		req:controller4
