@@ -614,23 +614,7 @@ Upgrades
 		tag:controllerUpgrade
 		req:controller4
  
-//Unlocks for portables and PC (Generation Upgrades)
-	*consoleUnlock
-		name:Invent Portable Consoles
-		desc:Bring yer consoles anywhere!<//><b>Effect:</b><.>Unlocks <i>Portable Consoles</i>
-		cost:250 money
-		icon:https://i.postimg.cc/q7QCy2kc/portable-Console-Unlock.png
-		tag:generationUpgrade
-		req:10 console1
- 
-	*pcUnlock
-		name:Invent PCs
-		desc:Get big, beefy PCs!<//><b>Effect:</b><.>Unlocks <i>PCs</i>
-		cost:1000 money
-		icon:https://i.postimg.cc/KYmM10yv/pcUnlock.png
-		tag:generationUpgrade
-		req:10 console1
- 
+ //Generation Upgrades
 	*antivirusUpgrade
 		name:Antivirus
 		desc:Finally get an antivirus to get rid of those pesky viruses.<//><b>Effect:</b><.><i>Viruses</i> will disappear forever.<.>2x multiplier to everything!
@@ -641,6 +625,13 @@ Upgrades
 		end
 		tag:generationUpgrade
 		req:1 antivirusFragment
+
+	*generationBoss1
+		name:Reverse Hack
+		desc:Duel against the hacker in an attempt to remove him from your system.<//><b>Effect:</b><.>Earn 1 million money in one minute to purge the hacker from your system and complete the game.
+		cost:0 money
+		tag:generationUpgrade
+		req:antivirusUpgrade
  
 //Console Upgrades
 	*gdUpgrade1
