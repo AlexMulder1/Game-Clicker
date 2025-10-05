@@ -175,92 +175,166 @@ Buttons
 		hidden
 		no text
  
-	*showControllerUpgrades
+	*sControllerUpgrades
 		name:Controller Upgrades
 		desc:Level up your controller once or twice!...or even more times!
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:controllerUpgrade
 			hide :Upgrades:owned
-			hide showControllerUpgrades
-			show showControllerUpgrades
+			hide sControllerUpgrades
+			show hControllerUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
+		hidden
 
-	*hideControllerUpgrades
+	*hControllerUpgrades
 		name:Controller Upgrades
 		desc:Level up your controller once or twice!...or even more times!
 		tag:upgradeSwitcher
 		on click:
 			hide :Upgrades:tag:controllerUpgrade
 			hide :Upgrades:owned
-			hide hideControllerUpgrades
-			show showControllerUpgrades
+			hide hControllerUpgrades
+			show sControllerUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
  
-	*consoleUpgrades
+	*sConsoleUpgrades
 		name:Console Upgrades
 		desc:Enhance your consoles past their simple structure.
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:consoleUpgrade
-			hide :Upgrades:notTag:consoleUpgrade
 			hide :Upgrades:owned
+			hide sConsoleUpgrades
+			show hConsoleUpgrades
+			anim glow
+		end
+		tooltip origin:bottom
+		hidden
+
+	*hConsoleUpgrades
+		name:Console Upgrades
+		desc:Enhance your consoles past their simple structure.
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:consoleUpgrade
+			hide :Upgrades:owned
+			hide hConsoleUpgrades
+			show sConsoleUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
  
-	*workplaceUpgrades
+	*sWorkplaceUpgrades
 		name:Workplace Upgrades
 		desc:Make that place of yours more…livable.
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:workplaceUpgrade
-			hide :Upgrades:notTag:workplaceUpgrade
 			hide :Upgrades:owned
+			hide sWorkplaceUpgrades
+			show hWorkplaceUpgrades
+			anim glow
+		end
+		tooltip origin:bottom
+		hidden
+
+	*hWorkplaceUpgrades
+		name:Workplace Upgrades
+		desc:Make that place of yours more...livable.
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:workplaceUpgrade
+			hide :Upgrades:owned
+			hide hWorkplaceUpgrades
+			show sWorkplaceUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
  
-	*generationUpgrades
+	*sGenerationUpgrades
 		name:Generation Upgrades
 		desc:Advance the game.
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:generationUpgrade
-			hide :Upgrades:notTag:generationUpgrade
 			hide :Upgrades:owned
+			hide sGenerationUpgrades
+			show hGenerationUpgrades
+			anim glow
+		end
+		tooltip origin:bottom
+		hidden
+
+	*hGenerationUpgrades
+		name:Generation Upgrades
+		desc:Advance the game.
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:generationUpgrade
+			hide :Upgrades:owned
+			hide hGenerationUpgrades
+			show sGenerationUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
 
-	*specialtyUpgrades
+	*sSpecialtyUpgrades
 		name:Specialty Upgrades
 		desc:Buy unique upgrades using those bug remnants of yours.
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:specialtyUpgrade
-			hide :Upgrades:notTag:specialtyUpgrade
 			hide :Upgrades:owned
+			hide sSpecialtyUpgrades
+			show hSpecialtyUpgrades
+			anim glow
+		end
+		tooltip origin:bottom
+		hidden
+
+	*hSpecialtyUpgrades
+		name:Specialty Upgrades
+		desc:Buy unique upgrades using those bug remnants of yours.
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:specialtyUpgrade
+			hide :Upgrades:owned
+			hide hSpecialtyUpgrades
+			show sSpecialtyUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
 
-	*modButton
+	*sModButton
 		name:Mods
 		desc:Click this to see equippable mods.
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:mods
-			hide :Upgrades:notTag:mods
+			hide sModButton
+			show hModButton
 			anim glow
 		end
 		tooltip origin:bottom
-		req:modUpgrade
- 
+		hidden
+
+	*hModButton
+		name:Mods
+		desc:Click this to see equippable mods.
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:mods
+			hide hModButton
+			show sModButton
+			anim glow
+		end
+		tooltip origin:bottom
+		hidden
  
 Resources
 //Real Resources
@@ -762,6 +836,7 @@ Upgrades
 			grant 1 modSlot
 			grant 1 modMult
 		end
+		on earn:show hModButton
 		tag:specialtyUpgrade
 		req:sloppyCode
 
