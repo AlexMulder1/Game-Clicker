@@ -1169,8 +1169,8 @@ Shinies
  
 	*gameBug
 		movement:anywhere fade growShrink spinRandom
-		frequency:10
-		frequency variation:10
+		frequency:75
+		frequency variation:15
 		duration:5
 		icon:https://i.postimg.cc/vTQRf7v8/pixil-frame-0-2.png
 		class:bigButton
@@ -1225,7 +1225,7 @@ Shinies
  
 	*mac
 		movement:onBottom onLeft moveRight bounce
-		frequency:30
+		frequency:1800
 		icon:https://i.postimg.cc/0jrr2Q0g/Mac.png
 		class:bigButton
 		on click:
