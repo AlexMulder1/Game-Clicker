@@ -7,7 +7,9 @@ Let's make a game!
 	version:0.92
  
 //This is supposed to be the early game. If this is supposed to be the early game, then WHERE IN THE WORLD ARE THE FUN AND QUICK GRINDS? basically, every single thing in the game either needs a production buff or a price nerf. It’s supposed to be go from one thing to the next. Remember: this is the early game. It should be quick, and the number should go up fast. I thought about it, and…isn’t this stuff coming in the future updates? We got gold, chips, fame! Right now, what we have is the full game. It shouldn’t be a quick grind. (although I am buffing the game bug)
- 
+//it's not that things need nerfs. it's that i shouldn't throttle progress and this should be the opening segment to a much larger portion of the game. 
+//nerf the price to the antivirus upgrade to 20 to accomodate the new playtime. actually, remove workplace upgrades. i don't really like how they're implemented and they basically become useless
+
 //the nerf list: should consider a nerf towards inflation for all towers...upgrades should be more extensive/cover a larger area of the game. glitch also deserves a nerf. Console upgrades could use a possible nerf. Ironically the tower based trophies also need a nerf. One of the outlining issues is when you start the game, you get all this crazy stuff. But then there’s this long stretch where there’s nothing stimulating. Then, near the end, it starts picking back up again.
  
 Settings
@@ -173,14 +175,28 @@ Buttons
 		hidden
 		no text
  
-	*controllerUpgrades
+	*showControllerUpgrades
 		name:Controller Upgrades
-		desc:Level up your controller once or twice!…or even more times!
+		desc:Level up your controller once or twice!...or even more times!
 		tag:upgradeSwitcher
 		on click:
 			show :Upgrades:tag:controllerUpgrade
-			hide :Upgrades:notTag:controllerUpgrade
 			hide :Upgrades:owned
+			hide showControllerUpgrades
+			show showControllerUpgrades
+			anim glow
+		end
+		tooltip origin:bottom
+
+	*hideControllerUpgrades
+		name:Controller Upgrades
+		desc:Level up your controller once or twice!...or even more times!
+		tag:upgradeSwitcher
+		on click:
+			hide :Upgrades:tag:controllerUpgrade
+			hide :Upgrades:owned
+			hide hideControllerUpgrades
+			show showControllerUpgrades
 			anim glow
 		end
 		tooltip origin:bottom
@@ -544,7 +560,7 @@ Upgrades
 	*antivirusUpgrade
 		name:Antivirus
 		desc:Finally get an antivirus to get rid of those pesky viruses.<//><b>Effect:</b><.><i>Viruses</i> will disappear forever.<.>2x multiplier to everything!
-		cost:100 antivirusFragment
+		cost:20 antivirusFragment
 		passive:
 			multiply yield of tag:money by 2
 			multiply frequency of gameVirus by 100000
@@ -555,81 +571,81 @@ Upgrades
 //Console Upgrades
 	*gdUpgrade1
 		name:Game Dude Tier 1
-		desc:Polish the Game Dude.<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>1.2x</b> as much money!
-		cost:25000 money
-		passive:multiply yield of portableConsole1 by 1.2
+		desc:Polish the Game Dude.<//><b>Effect:</b><.>The <i>Game Dude</i> makes <b>2x</b> as much money!
+		cost:5000 money
+		passive:multiply yield of portableConsole1 by 2
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
-		req:75 portableConsole1
+		req:15 portableConsole1
 
 	*gdUpgrade2
 		name:Game Dude Tier 2
-		desc:Polish the Game Dude a little more.<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>1.5x</b> as much money!
-		cost:100000 money
-		passive:multiply yield of portableConsole1 by 1.25
+		desc:Polish the Game Dude a little more.<//><b>Effect:</b><.>The <i>Game Dude</i> makes <b>2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of portableConsole1 by 2
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
 		req:gdUpgrade1
 
 	*gdUpgrade3
 		name:Game Dude Tier 3: Color Enhancement
-		desc:Add color to the amazing GameDude!<//><b>Effect:</b><.>The <i>Game Dude</i> now makes <b>2x</b> as much money!
-		cost:500000 money
-		passive:multiply yield of portableConsole1 by (4/3)
+		desc:Add color to the amazing GameDude!<//><b>Effect:</b><.>The <i>Game Dude</i> makes <b>2x</b> as much money!
+		cost:100000 money
+		passive:multiply yield of portableConsole1 by 2
 		icon:https://i.postimg.cc/VkkFTsdF/portable-Console-Upgrade1.png
 		tag:consoleUpgrade
 		req:gdUpgrade2
  
 	*agsUpgrade1
 		name:Alexandrox Gaming System Tier 1
-		desc:Polish the Alexandrox Gaming System.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>1.2x</b> as much money!
-		cost:25000 money
-		passive:multiply yield of console1 by 1.2
+		desc:Polish the Alexandrox Gaming System.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> makes <b>2x</b> as much money!
+		cost:5000 money
+		passive:multiply yield of console1 by 2
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
-		req:50 console1
+		req:10 console1
 
 	*agsUpgrade2
 		name:Alexandrox Gaming System Tier 2
-		desc:Polish up the Alexandrox Gaming System a little more.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>1.5x</b> as much money!
-		cost:100000 money
-		passive:multiply yield of console1 by 1.25
+		desc:Polish up the Alexandrox Gaming System a little more.<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> makes <b>2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of console1 by 2
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
 		req:agsUpgrade1
 
 	*agsUpgrade3
 		name:Alexandrox Gaming System Tier 3: Console Paint
-		desc:Paint the Alexandrox Gaming System with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> now makes <b>2x</b> as much money!
-		cost:500000 money
-		passive:multiply yield of console1 by (4/3)
+		desc:Paint the Alexandrox Gaming System with blue accents!<//><b>Effect:</b><.>The <i>Alexandrox Gaming System</i> makes <b>2x</b> as much money!
+		cost:100000 money
+		passive:multiply yield of console1 by 2
 		icon:https://i.postimg.cc/YS4zrXNG/console-Upgrade1.png
 		tag:consoleUpgrade
 		req:agsUpgrade2
 
 	*ppcUpgrade1
 		name:Potato PC Tier 1
-		desc:Polish the Potato PC.<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>1.2x</b> as much money!
-		cost:25000 money
-		passive:multiply yield of pc1 by 1.2
+		desc:Polish the Potato PC.<//><b>Effect:</b><.>The <i>Potato PC</i> makes <b>2x</b> as much money!
+		cost:5000 money
+		passive:multiply yield of pc1 by 2
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
-		req:30 pc1
+		req:5 pc1
 
 	*ppcUpgrade2
 		name:Potato PC Tier 2
-		desc:Polish up the Potato PC a little more.<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>1.5x</b> as much money!
-		cost:100000 money
-		passive:multiply yield of pc1 by 1.25
+		desc:Polish up the Potato PC a little more.<//><b>Effect:</b><.>The <i>Potato PC</i> makes <b>2x</b> as much money!
+		cost:25000 money
+		passive:multiply yield of pc1 by 2
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
 		req:ppcUpgrade1
 
 	*ppcUpgrade3
 		name:Potato PC Tier 3: GPU Upgrade
-		desc:Get a new, more colorful GPU for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> now makes <b>2x</b> as much money!
-		cost:500000 money
-		passive:multiply yield of pc1 by (4/3)
+		desc:Get a new, more colorful GPU for your Potato PC!<//><b>Effect:</b><.>The <i>Potato PC</i> makes <b>2x</b> as much money!
+		cost:100000 money
+		passive:multiply yield of pc1 by 2
 		icon:https://i.postimg.cc/Mp3Y8kBJ/pc-Upgrade1.png
 		tag:consoleUpgrade
 		req:ppcUpgrade2
